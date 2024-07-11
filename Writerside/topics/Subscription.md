@@ -1,6 +1,11 @@
 # Subscription
 
-js-dos subscription activates cloud features of player. To subscribe, you need to have an js-dos account.
+js-dos subscription activates cloud features of player. To subscribe, you need to have a js-dos account.
+
+> **Please use js-dos player below to create and manage subscription.**
+>
+{style="note"} 
+
 
 > The account/subscription is part of player and independent of website.
 > If you change your subscription, it will affect **all websites** that integrate player.
@@ -41,6 +46,11 @@ When you are logged, you will see your name in pre-start window.
 ![Logged](logged.jpg)
 
 ## Subscribe
+
+> **You can manage subscription only under this page.**
+> 
+> (use player on top of this page)
+{style="warning"}
 
 To subscribe, you must be **logged in**. 
 

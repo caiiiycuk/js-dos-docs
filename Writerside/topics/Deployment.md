@@ -10,7 +10,7 @@ please let me know.
 
 You are also able to create your own sockdrive server with own drives, and run it locally or globally. 
 
-sockdrive server should work fine on any linux distribution like Ubuntu. Download the [**server**](https://cdn.dos.zone/custom/tools/sockdrive-backend.zip) and
+sockdrive server should work fine on any linux distribution like Ubuntu. Download the [**server**](https://cdn.dos.zone/custom/tools/sockdrive-backend-11.07.2024.zip) and
 unpack it somewhere.
 
 Folder structure:

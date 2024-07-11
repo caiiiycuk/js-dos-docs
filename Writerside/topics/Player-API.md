@@ -31,7 +31,10 @@ It returns `DosProps` to a control created player
 | **onEvent**         | listener of js-dos events                                            | function                                                                                                                                                                                                                                              |               |
 | **loginUrl**        | url to redirect back on login                                        | string                                                                                                                                                                                                                                                | location.href |
 | **autoStart**       | automatically starts emulation                                       | boolean                                                                                                                                                                                                                                               | false         |
-| **kiosk**           | swithc kiosk mode, in kiosk mode player ui is hidden                 | boolean                                                                                                                                                                                                                                               | false         |
+| **kiosk**           | switch kiosk mode, in kiosk mode player ui is hidden                 | boolean                                                                                                                                                                                                                                               | false         |
+| **imageRendering**  | image rendering mode                                                 | pixelated, smooth                                                                                                                                                                                                                                     | pixelated     |
+| **renderBackend**   | the way to render dos screen                                         | webgl, canvas                                                                                                                                                                                                                                         | webgl         |
+| **renderAspect**    | change the aspect of output window                                   | AsIs, 1/1, 5/4, 4/3, 16/10, 16/9, Fit                                                                                                                                                                                                                 | AsIs          |
 
 > All options are optional
 
@@ -44,21 +47,24 @@ cost props = Dos(elem, options);
 props.setFullScreen(true); // switch to fullscreen mode
 ```
 
-| property             | description                     | arguments       |
-|----------------------|---------------------------------|-----------------|
-| **setTheme**         | switch player theme             | theme name      |
-| **setLang**          | change language                 | en, ru          |
-| **setBackend**       | change backend                  | dosbox, dosboxX |
-| **setBackendLocked** | change is backend locked or not | bool            |
-| **setWorkerThread**  | select execution mode           | bool            |
-| **setMouseCapture**  | set is mouse captured or not    | bool            |
-| **setServer**        | change ipx server               | str             |
-| **setRoom**          | change ipx room                 | str             |
-| **setFrame**         | open named sidebar panel        | network         |
-| **setBackground**    | change background image         | URL             |
-| **setFullScreen**    | change fullscreen mode          | bool            |
-| **setAutoStart**     | change auto start               | bool            |
-| **setKiosk**         | change kisok mode               | bool            |
+| property              | description                                                   | arguments                             |
+|-----------------------|---------------------------------------------------------------|---------------------------------------|
+| **setTheme**          | switch player theme                                           | theme name                            |
+| **setLang**           | change language                                               | en, ru                                |
+| **setBackend**        | change backend                                                | dosbox, dosboxX                       |
+| **setBackendLocked**  | change is backend locked or not                               | bool                                  |
+| **setWorkerThread**   | select execution mode                                         | bool                                  |
+| **setMouseCapture**   | set is mouse captured or not                                  | bool                                  |
+| **setServer**         | change ipx server                                             | str                                   |
+| **setRoom**           | change ipx room                                               | str                                   |
+| **setFrame**          | open named sidebar panel                                      | network                               |
+| **setBackground**     | change background image                                       | URL                                   |
+| **setFullScreen**     | change fullscreen mode                                        | bool                                  |
+| **setAutoStart**      | change auto start                                             | bool                                  |
+| **setKiosk**          | change kisok mode                                             | bool                                  |
+| **setImageRendering** | change image rendering                                        | pixelated, smooth                     |
+| **setRenderBackend**  | change render backend (available only before emulation start) | webgl                                 |
+| **setRenderAspect**   | change render aspect                                          | AsIs, 1/1, 5/4, 4/3, 16/10, 16/9, Fit |
 
 ## Events
 
