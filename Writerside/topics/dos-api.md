@@ -19,6 +19,9 @@ js-dos provide a CDN with the latest version, just add this html to `<head>` sec
 <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
 ```
 
+Alternatively, you can download the latest version of js-dos from [releases](https://github.com/caiiiycuk/js-dos/releases/) page.
+Or, install it via [npm](https://www.npmjs.com/package/js-dos).
+
 ## Provide js-dos bundle to run
 
 The easiest way to run some program is to prepare [js-dos bundle](jsdos-bundle.md). You can do it 
