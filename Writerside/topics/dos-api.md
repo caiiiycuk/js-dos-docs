@@ -9,7 +9,7 @@ a dos window.
 ## Adding js-dos to your web page
 
 This is a common thing in web development, you need to add js-dos related scripts to your webpage.
-js-dos provide a CDN with the latest version, just add this html to `<head>` section of page:
+js-dos provides a CDN with the latest version, just add this html to `<head>` section of page:
 
 ```html
 <!-- js-dos style sheet -->
