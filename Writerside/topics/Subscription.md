@@ -22,10 +22,9 @@ Follow the instructions bellow to create a js-dos account.
 
 .doswindow.
 
-1. Press the _Login_ button or icon in the sidebar.
+1. Press the icon in the sidebar.
 
-| ![Login Button](login-button.jpg) | ![Login](login.jpg) |  
-|-----------------------------------|---------------------|
+![Login](login.jpg)
 
 2. Switch to _SIGN UP_  tab and fill all inputs
 ![Registration](registration.jpg)
@@ -41,7 +40,7 @@ To log in, use the same steps as for creating an account, but use _Login_ tab in
 ![Login Tab](login_tab.jpg)
 {style="block"}
 
-When you are logged, you will see your name in pre-start window.
+When you are logged, you will see your name under account frame.
 
 ![Logged](logged.jpg)
 

@@ -39,6 +39,7 @@ It returns `DosProps` to a control created player
 | **noCloud**          | disable cloud feature                                                | bool                                                                                                                                                                                                                                                  | false         |
 | **scaleControls**    | set scale of controls                                                | number                                                                                                                                                                                                                                                | 0.2           |
 | **mouseSensitivity** | set mouse sensitivity                                                | number                                                                                                                                                                                                                                                | 1.0           |
+| **noCursor**         | show/hide system cursor                                              | bool                                                                                                                                                                                                                                                  | false         |
 
 > All options are optional
 > 
@@ -76,6 +77,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setScaleControls**    | set scale of controls                                         | number                                |
 | **setMouseSensitivity** | set mouse sensitivity                                         | number                                |
 | **setPaused**           | pause/resume emulation                                        | bool                                  |
+| **setNoCursor**         | show/hide system cursor                                       | bool                                  |
 | **stop**                | kill the emulation (use to stop player)                       | -                                     |
 
 ## Events
