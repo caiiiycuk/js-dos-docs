@@ -12,7 +12,9 @@
         <toc-element topic="jsdos-bundle.md"/>
         <toc-element topic="Save-Load-Game-Progress.md"/>
         <toc-element topic="Player-API.md"/>
-        <toc-element topic="mobile-support.md"/>
+        <toc-element topic="mobile-support.md">
+            <toc-element topic="Virtual-Keyboard.md"/>
+        </toc-element>
         <toc-element topic="v7.md">
             <toc-element topic="mobile-support-v7.md"/>
             <toc-element topic="mouse-locking.md"/>

@@ -15,18 +15,10 @@ You can create js-dos player by providing config using javascript:
 ```Javascript
 Dos(document.getElementById("app"), {
   dosboxConf: `
-[dos]
-ver=7.1
-hard drive data rate limit=0
-floppy drive data rate limit=0
-
-[cpu]
-cputype=pentium_mmx
-core=auto 
-integration device=true
-
-[sblaster]
-sbtype=sb16vibra`,
+    [autoexec]
+    mount c .
+    c:
+  `,
   onEvent: (event, ci) => {
     if (event === "ci-ready") {
         // ci: [[[CommandIterface|command-interface.md]]] is ready
@@ -35,8 +27,43 @@ sbtype=sb16vibra`,
 });
 ```
 
-When you get [command interface](command-interface.md) (ci in example), then you can use [FS API](working-with-fs.md) to work with DOS filesystem.
-For example, you can upload program to run in DOSBox. 
+Having config allows you to start DOSBox / DOSBox-X, but it is not very useful without a program to run.
+To init FS before emulation starts, you need to use `initFs` property.
+It's a sequence of files, in the following format:
 
-Do not forget to mount drive **C:** after that.
+```Javascript
+  initFs: [
+    { path: string, contents: Uint8Array },
+    ...
+  ],
+```
+
+Where `path` is a full path to file, `contents` is a body of file.
+
+Using the following snippet you will create two files: 
+* *1.txt* with contents *"123"*
+* *2.txt* in directory *D* with contents *"345"*
+
+```Javascript
+Dos(document.getElementById("app"), {
+  dosboxConf: `
+    [autoexec]
+    mount c .
+    c:
+  `,
+  initFs: [
+    { path: "1.txt", contents: new TextEncoder().encode("123") },
+    { path: "D/2.txt", contents: new TextEncoder().encode("345") },
+  ],
+  onEvent: (event, ci) => {
+    if (event === "ci-ready") {
+        // ci: [[[CommandIterface|command-interface.md]]] is ready
+    }
+  },
+});
+```
+
+Now when you run it, you can check your files with `TYPE` command:
+
+![](initFs.jpg)
 
