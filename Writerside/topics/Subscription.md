@@ -1,32 +1,21 @@
 # Subscription
 
-js-dos subscription activates cloud features of player. To subscribe, you need to have a js-dos account.
+js-dos subscription activates advanced cloud features of player. 
+To manage your subscription and player key please open this [8.xx subscription](https://v8.js-dos.com/key/) page.
 
-> **Please use js-dos player below to create and manage subscription.**
->
-{style="note"} 
-
-
-> The account/subscription is part of player and independent of website.
+> **The account/subscription is part of js-dos cloud and does not provide any info to 3rd party websites.**
+> 
 > If you change your subscription, it will affect **all websites** that integrate player.
 >
 {style="note"}
 
-> To use all subscription features, you must be **logged in**.
-> 
-{style="note"}
-
-## Create account
+## Create an account
 
 Follow the instructions bellow to create a js-dos account.
 
-.doswindow.
+1. Open [8.xx subscription](https://v8.js-dos.com/key/) page
 
-1. Press the icon in the sidebar.
-
-![Login](login.jpg)
-
-2. Switch to _SIGN UP_  tab and fill all inputs
+2. Switch to _SIGN UP_ tab and fill all inputs
 ![Registration](registration.jpg)
 {style="block"}
 
@@ -40,28 +29,48 @@ To log in, use the same steps as for creating an account, but use _Login_ tab in
 ![Login Tab](login_tab.jpg)
 {style="block"}
 
-When you are logged, you will see your name under account frame.
-
-![Logged](logged.jpg)
+When you are logged, you will see your name and current subscription.
 
 ## Subscribe
 
-> **You can manage subscription only under this page.**
-> 
-> (use player on top of this page)
+> **You can manage subscription only under [8.xx subscription](https://v8.js-dos.com/key/) page.**
 {style="warning"}
 
-To subscribe, you must be **logged in**. 
+To subscribe, you must be **logged in**. Use _Buy_ button to subscribe.
 
-1. Click on _Person_ icon in sidebar.
-2. Use _Buy_ button to subscribe.
+![Buy Button](buy-button.jpg)
 
-![Buy button](buy-button.jpg)
+> Please regenerate secret key when you change your subscription
+>
+{style="note"}
+
+## Secret key
+
+The js-dos player uses secret key to get access to your subscription; you can get it on the bottom of the page.
+Use _Refresh_ button to change it.
+
+![Refresh key](refresh-key.jpg)
+
+Then copy the key and paste it into the player:
+
+![Enter key](enter-key.jpg)
+
+
+## Can I share secret key?
+
+Yep, you can.
+But take in mind that secret key provides direct access to your disk drives and saves.
+In the case of concurrent writing, they **will quickly become broken**.
 
 
 ## Cancel your subscription
 
-To cancel your subscription, please reach out to xsolla customer support team. You can do this by sending an email to [support@xsolla.com](mailto:support@xsolla.com). 
+Press _Cancle_ button in your subscription details.
+
+![cancel-subscription](cancel-subscription.jpg)
+
+In case of any problem, please reach out to xsolla customer support team. 
+You can do this by sending an email to [support@xsolla.com](mailto:support@xsolla.com). 
 In your email, kindly include your subscription details and any specific requests or questions you might have. 
 Our support team is dedicated to assisting you and will respond as promptly as possible to help you with the cancellation process.
 
