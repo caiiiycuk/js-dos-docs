@@ -9,12 +9,16 @@
         <download-page>https://github.com/caiiiycuk/js-dos/releases</download-page>
         <custom-favicons>logo-16.png,logo-32.png,logo-192.png,logo-512.png</custom-favicons>
         <header-logo>logo-512.png</header-logo>
+        <analytics-head-script-file>head.js</analytics-head-script-file>
+        <analytics-body-html-file>body.html</analytics-body-html-file>
     </variables>
 
     <build-profile instance="jsdos">
         <variables>
             <noindex-content>false</noindex-content>
             <offline-docs>false</offline-docs>
+            <og-twitter>@caiiiycuk</og-twitter>
+            <og-image>https://js-dos.com/images/seo.jpg</og-image>
         </variables>
         <sitemap priority="1.0" change-frequency="monthly"/>
     </build-profile>
