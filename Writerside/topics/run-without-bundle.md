@@ -27,6 +27,40 @@ Dos(document.getElementById("app"), {
 });
 ```
 
+Additionally, you can provide `jsdos.json` configuration, for example, here we start js-dos with one virtual button. 
+
+```Javascript
+Dos(document.getElementById("app"), {
+  dosboxConf: `
+    [autoexec]
+    mount c .
+    c:
+  `,
+  jsdosConf: {
+    "layersConfig": {
+      "version": 2,
+      "layers": [
+        {
+          "grid": "honeycomb",
+          "title": "Layer#0",
+          "controls": [
+            {
+              "row": 0,
+              "column": 0,
+              "symbol": "↑",
+              "type": "Key",
+              "mapTo": [
+                265
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+});
+```
+
 Having config allows you to start DOSBox / DOSBox-X, but it is not very useful without a program to run.
 To init FS before emulation starts, you need to use `initFs` property.
 It's a sequence of files, in the following format:
