@@ -18,7 +18,7 @@ Windows. Installing process includes:
 Here is a tutorial video with a Windows 95 installation process.
 
 <tabs>
-    <tab title="Engilsh">
+    <tab title="English">
       <video src="https://www.youtube.com/watch?v=jZKlPO5kJvI" />
     </tab>
     <tab title="Russian">

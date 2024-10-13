@@ -45,7 +45,7 @@ Open <a href="https://dos.zone/studio">Game Studio v7</a>
 ## How to create bundles for DOS and Windows 95
 
 <tabs>
-    <tab title="Engilsh">
+    <tab title="English">
       <video src="https://www.youtube.com/watch?v=erq29Tsd9U8" />
     </tab>
     <tab title="Russian">
