@@ -46,6 +46,15 @@ Same as above, but with Daemon Tools installed.
 imgmount 2 sockdrive wss://sockdrive.js-dos.com:8001 system win95-v2
 ```
 
+## 💽 Windows 95 2GB (Russian)
+
+Russian version
+
+
+```
+imgmount 2 sockdrive wss://sockdrive.js-dos.com:8001 system win95-ru
+```
+
 ## 💽 Windows 98 2GB (+Daemon Tools)
 
 This image includes a bootable disk with the Windows 98 operating system and offers several key features. These include support for **DirectX 3D** and **3Dfx**, as well as seamless mouse integration for user convenience.
