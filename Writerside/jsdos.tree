@@ -38,9 +38,9 @@
         </toc-element>
         <toc-element topic="sockdrive.md">
             <toc-element topic="Getting-Started.md"/>
+            <toc-element topic="System-images.md"/>
             <toc-element topic="fork-drive.md"/>
             <toc-element topic="Deployment.md"/>
-            <toc-element topic="System-images.md"/>
             <toc-element topic="Create-a-game-bundle.md"/>
             <toc-element topic="install-windows.md"/>
         </toc-element>

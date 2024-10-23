@@ -9,6 +9,25 @@ Sockdrive command:
 imgmount 2 sockdrive wss://sockdrive.js-dos.com:8001 system dos7.1-v1
 ```
 
+## 💽 Windows 3.11 256 Mb
+
+This image includes a bootable disk with the Windows 3.11 operating system, perfectly suited for installing various games.
+Resolution is set to 800x600 with 65k colors, sound blaster installed.
+
+Sockdrive command:
+```
+imgmount 2 sockdrive wss://sockdrive.js-dos.com:8001 system win311-v1
+```
+
+## 💽 Windows 3.11 Russian 256 Mb
+
+Same as above but with Russian language pack.
+
+Sockdrive command:
+```
+imgmount 2 sockdrive wss://sockdrive.js-dos.com:8001 system win311-ru
+```
+
 ## 💽 Windows 95 256 MB
 
 This image includes a bootable disk with the Windows 95 operating system and offers several key features. These include support for **DirectX 3D** and **3Dfx**, as well as seamless mouse integration for user convenience. 
