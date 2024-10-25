@@ -6,6 +6,22 @@ your webpage with DOS.
 You can start with any template of webpage you want. You only need some div element where to put 
 a dos window.
 
+For example, you can use following template:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Awesome Website</title>
+</head>
+<body>
+    <h1>My Awesome game</h1>
+</body>
+</html>
+```
+
 ## Adding js-dos to your web page
 
 This is a common thing in web development, you need to add js-dos related scripts to your webpage.
@@ -33,12 +49,13 @@ Direct link to it:
 https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdos
 ```
 
-## Write a script to run DOS
+## Create div element and run game
 
+Now, we need to create a `<div>` element in the body section and instruct js-dos to use it as the output element.
 Now, we need to provide some div element and tell js-dos to run bundle using t:
 
 ```html
-<div id="dos"></div>
+<div id="dos" style="width: 100vw; height: 60vw;"></div>
 
 <script>
     Dos(document.getElementById("dos"), {
@@ -49,9 +66,8 @@ Now, we need to provide some div element and tell js-dos to run bundle using t:
 
 That is, Dos constructor takes two arguments:
 
-1. div element where to put a dos window
-2. options with initial configuration
-
+1. **div** element where to put a dos window. We used the id `dos` to indicate to js-dos which element to use.
+2. [**options**](Player-API.md) with initial configuration. We specify url with [**game bundle**](jsdos-bundle.md).
 
 ```Typescript
 ```
@@ -64,6 +80,6 @@ Open your test webpage in browser, you should see something like this:
 ![startup window](preview.jpg)
 
 > Do not try to run it using **file://** protocol, it will not work.
-> You need to host it locally. (http://localhost:8080)
+> You need to host it locally. (http://localhost:8080).
 > 
 {style="warning"}
