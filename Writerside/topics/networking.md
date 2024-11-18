@@ -52,7 +52,7 @@ For example, if your server is available on host `myipx.com`, [js-dos configurat
     const params = new URLSearchParams(location.search);
 // ...
     Dos(el, {
-          server: params.get("server"),
+          ipxBackend: params.get("ipxBackend"),
           room: params.get("room"),
           ipx: [{
               name: "myipx",
