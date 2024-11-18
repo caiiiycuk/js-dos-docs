@@ -46,7 +46,7 @@ server.
 ### Configuring js-dos player
 
 When server is started you can use it with js-dos player. 
-For example, if your server is available on host `myipx.com`, js-dos configuration will be:
+For example, if your server is available on host `myipx.com`, [js-dos configuration](Player-API.md) will be:
 
 ```javascript
     const params = new URLSearchParams(location.search);
