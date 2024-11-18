@@ -31,7 +31,8 @@ This server works as relay it connects multiple js-dos clients together. You nee
 server.
 
 1. Download the server [binary](https://github.com/caiiiycuk/dosbox-ipx-server/releases/)
-2. Run it as follows:
+2. `chmod +x server` to make it executable
+3. Run it as follows:
 
    ```
    ./server -c cert.pem -k privkey.pem
