@@ -104,11 +104,12 @@ Dos(elem, {
 });
 ```
                     
-| order | event         | description                                                                       | args                                     |
-|:------|---------------|-----------------------------------------------------------------------------------|:-----------------------------------------|
-| 0     | **emu-ready** | when emulators are fully loaded and ready to run the program                      |                                          |
-| 1     | **bnd-play**  | when play button is clicked                                                       |                                          |
-| 2     | **ci-ready**  | when backend is started and [CommandInterface](command-interface.md) is available | [CommandInterface](command-interface.md) |
+| order | event                  | description                                                                       | args                                     |
+|:------|------------------------|-----------------------------------------------------------------------------------|:-----------------------------------------|
+| 0     | **emu-ready**          | when emulators are fully loaded and ready to run the program                      |                                          |
+| 1     | **bnd-play**           | when play button is clicked                                                       |                                          |
+| 2     | **ci-ready**           | when backend is started and [CommandInterface](command-interface.md) is available | [CommandInterface](command-interface.md) |
+|       | **fullscreen-changed** | when fullscreen state of player changed                                           | boolean                                  |
 
 
 ## Stop/Restart player
