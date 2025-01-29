@@ -62,6 +62,8 @@ props.setFullScreen(true); // switch to fullscreen mode
 
 | property                   | description                                                   | arguments                             |
 |----------------------------|---------------------------------------------------------------|---------------------------------------|
+| **getVersion**             | vartion of js-dos + emulators                                 |                                       |
+| **getToken**               | get user token or null if not logged                          |                                       |
 | **setTheme**               | switch player theme                                           | theme name                            |
 | **setLang**                | change language                                               | en, ru                                |
 | **setBackend**             | change backend                                                | dosbox, dosboxX                       |
