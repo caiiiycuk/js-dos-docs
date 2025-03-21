@@ -6,4 +6,32 @@
         <accepts>page.html</accepts>
     </rule>
     -->
+    <rule id="28805ef">
+        <description>Created after removal of "Getting Started (sockdrive)" from js-dos</description>
+        <accepts>Getting-Started.html</accepts>
+    </rule>
+    <rule id="dbd9e4">
+        <description>Created after removal of "System images" from js-dos</description>
+        <accepts>System-images.html</accepts>
+    </rule>
+    <rule id="6bffdc1e">
+        <description>Created after removal of "Fork (Clone) Drive" from js-dos</description>
+        <accepts>fork-drive.html</accepts>
+    </rule>
+    <rule id="169ac400">
+        <description>Created after removal of "Deployment" from js-dos</description>
+        <accepts>Deployment.html</accepts>
+    </rule>
+    <rule id="2f99fef7">
+        <description>Created after removal of "Create a game bundle" from js-dos</description>
+        <accepts>Create-a-game-bundle.html</accepts>
+    </rule>
+    <rule id="3af0409f">
+        <description>Created after removal of "Installing Windows" from js-dos</description>
+        <accepts>install-windows.html</accepts>
+    </rule>
+    <rule id="2b3edd39">
+        <description>Created after removal of "FAT Drives (sockdrive)" from js-dos</description>
+        <accepts>sockdrive.html</accepts>
+    </rule>
 </rules>

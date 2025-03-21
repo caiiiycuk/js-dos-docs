@@ -1,21 +1,21 @@
-# js-dos cloud
+# Cloud Saves
 
-js-dos offers cloud services that improve user experience. They include:
-
-* Storing saves in the cloud, that means you can restore your progress on any browser.
-* Networking that allows you to play multiplayer dos games.
-* Fat16, Fat32 network drives (sockdrive)
+By default, js-dos store game progress in indexed db of browser. This data can be wiped at any moment by browser.
+You can avoid this problem using js-dos cloud saves.
 
 To activate cloud services, you need to provide your secret key. 
 
-1. In UI of player (type key in input):
+In UI of player (type key in input):
 
-    ![Enter key](enter-key.jpg)
+![Enter key](enter-key.jpg)
 
-2. Using player [options](Player-API.md#options)
+> Also, you can provide secret key using player [API](Player-API.md#options)
 
 ## Secret key
 
 You can get secret key [here](https://v8.js-dos.com/key/)
 
+Learn more in our [tutorial](Subscription.md)
+
 > You can disable cloud features in player using [options](Player-API.md#options)
+

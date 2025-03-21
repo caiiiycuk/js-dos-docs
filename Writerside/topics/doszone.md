@@ -20,5 +20,11 @@ DOS.Zone consists of:
 
 ## Publishing your program
 
+<tabs>
+    <tab title="Russian">
+      <strong>Как крафтить игры от NicCarter54:</strong>
+      <video src="https://www.youtube.com/watch?v=7WfMcQt38c0" />
+    </tab>
+</tabs>
 1. Follow steps to [create bundle](jsdos-bundle.md)
 2. Send the publishing request using one of the channels above 

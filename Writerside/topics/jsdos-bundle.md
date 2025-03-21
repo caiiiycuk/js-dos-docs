@@ -86,30 +86,6 @@ Now when you have a bundle, go ahead and publish it somewhere.
 > 
 {style="note"}
 
-## Sockdrive bundles (Windows)
-
-> It's recommended to use DOS Browser to make the process faster. [DOS Browser](https://dos.zone/download/) has a builtin acceleration
-> for DOS.
-> 
-
-When you need to install Windows program, then you need to use [sockdrive](sockdrive.md). These drives
-are located in js-dos cloud, and transfer only required data to browser. The way of creating the bundle
- is the same as described above. Except one thing: you need to [create](fork-drive.md) such a drive first. 
-
-After creating a drive, you need to attach it to your configuration. Use "Browse" button for this, or
-enter drive manually.
-
-![Browse button](browser-button.jpg)
-
-Now you can start emulator and create bundle.
-
-> Do not add files to bundle. You must copy them to your Windows installation.
-> To do this. **Create a bundle first and then use it to boot.** 
-> 
-{style="warning"}
-
-Now reload the page and load your bundle with load button.
-
 ![Load bundle](load-bundle.jpg)
 
 When emulator is started, add files as explained before and mount bundle FS as some drive:

@@ -27,6 +27,7 @@
             </toc-element>
             <toc-element topic="releases.md"/>
         </toc-element>
+        <toc-element topic="networking.md"/>
         <toc-element topic="Documentation.md"/>
         <toc-element topic="need-help.md">
         </toc-element>
@@ -34,16 +35,6 @@
     <toc-element topic="cloud-overview.md">
         <toc-element topic="Subscription.md"/>
         <toc-element topic="Cloud-storage.md"/>
-        <toc-element topic="networking.md">
-        </toc-element>
-        <toc-element topic="sockdrive.md">
-            <toc-element topic="Getting-Started.md"/>
-            <toc-element topic="System-images.md"/>
-            <toc-element topic="fork-drive.md"/>
-            <toc-element topic="Deployment.md"/>
-            <toc-element topic="Create-a-game-bundle.md"/>
-            <toc-element topic="install-windows.md"/>
-        </toc-element>
     </toc-element>
     <toc-element topic="emulators.md">
         <toc-element topic="threejs.md">

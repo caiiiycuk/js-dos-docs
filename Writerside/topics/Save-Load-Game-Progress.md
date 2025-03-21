@@ -11,6 +11,6 @@ support storing progress. Read detailed [instructions](Cloud-storage.md#save-and
 ![save-button.jpg](save-button.jpg)
 
 > By default, js-dos store game progress in indexed db of browser. This data can be wiped at any moment by browser.
-> You can avoid this problem using js-dos [cloud services](cloud-overview.md).
+> You can avoid this problem using js-dos [cloud saves](Cloud-storage.md).
 >
 {style="warning"}

@@ -1,6 +1,6 @@
 # Subscription
 
-js-dos subscription activates advanced cloud features of player. 
+js-dos subscription activates cloud saves in player. 
 To manage your subscription and player key please open this [8.xx subscription](https://v8.js-dos.com/key/) page.
 
 > **The account/subscription is part of js-dos cloud and does not provide any info to 3rd party websites.**

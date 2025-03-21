@@ -7,7 +7,7 @@ This is a great no-cost solution, but it has some **limitations**:
 * It's not possible to play the same game using different devices.
 
 To address these problems, js-dos offers a cloud saves service. 
-For subscribed users, js-dos automatically stores the saves in the cloud, allowing you 
+For [subscribed](Subscription.md) users, js-dos automatically stores the saves in the cloud, allowing you 
 to have your progress synced across all your devices. With this feature, you can now enjoy seamless 
 gameplay experiences across different platforms.
 
@@ -44,9 +44,3 @@ Upon successfully storing the saves in persistent storage, you will receive a gr
 For non-subscribed users, js-dos offers a free service that stores your saves inside the browser's IndexedDB. However, this has limitations: it only works within the same browser, and the saves can be wiped suddenly by the browser.
 
 For **subscribed users**, saves are automatically stored in cloud storage and will be available on all your devices.
-
-## Wait, I don't see save button in js-dos sidebar
-
-This means that the game works over a FAT network drive, which is a feature typically used by large games. The FAT drive is fully managed by js-dos cloud, and all changes made to it are automatically stored in the cloud. This means that to save and load your progress, you need to follow the DOS game's built-in mechanism, and js-dos will take care of your saves automatically.
-
-For now, this feature is available only for premium users.
