@@ -11,6 +11,10 @@
         <header-logo>logo-512.png</header-logo>
         <analytics-head-script-file>head.js</analytics-head-script-file>
         <analytics-body-html-file>body.html</analytics-body-html-file>
+        <algolia-id>7U24CLLD6R</algolia-id>
+        <algolia-index>jsdos</algolia-index>
+        <algolia-api-key>8f71c9b88b4244a80f36f8dcafd194fb</algolia-api-key>
+        <algolia-show-logo>true</algolia-show-logo>
     </variables>
 
     <build-profile instance="jsdos">
