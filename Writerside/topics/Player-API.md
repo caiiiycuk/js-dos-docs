@@ -1,6 +1,6 @@
 # Player API
 
-js-dos player provides a single entry point a `Dos` function, it takes two arguments:
+js-dos player provides a single entry point: the `Dos` function, it takes two arguments:
 1. element where to create a player window
 2. options object to configure player
 
@@ -8,7 +8,7 @@ js-dos player provides a single entry point a `Dos` function, it takes two argum
 Dos(element: HTMLDivElement, options: DosOptions) => DosProps;
 ```
 
-It returns `DosProps` to a control created player 
+It returns `DosProps` to control the created player 
 
 ## Options
 
@@ -55,7 +55,7 @@ It returns `DosProps` to a control created player
 
 ## DosProps
 
-DosProps is a properties that you can use to control player after creation, use it like this:
+DosProps are properties that you can use to control player after creation, use it like this:
 
 ```Javascript
 cost props = Dos(elem, options);
@@ -64,7 +64,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 
 | property                   | description                                                   | arguments                             |
 |----------------------------|---------------------------------------------------------------|---------------------------------------|
-| **getVersion**             | vartion of js-dos + emulators                                 |                                       |
+| **getVersion**             | version of js-dos + emulators                                 |                                       |
 | **getToken**               | get user token or null if not logged                          |                                       |
 | **setTheme**               | switch player theme                                           | theme name                            |
 | **setLang**                | change language                                               | en, ru                                |
@@ -79,7 +79,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setBackground**          | change background image                                       | URL                                   |
 | **setFullScreen**          | change fullscreen mode                                        | bool                                  |
 | **setAutoStart**           | change auto start                                             | bool                                  |
-| **setKiosk**               | change kisok mode                                             | bool                                  |
+| **setKiosk**               | change kiosk mode                                             | bool                                  |
 | **setImageRendering**      | change image rendering                                        | pixelated, smooth                     |
 | **setRenderBackend**       | change render backend (available only before emulation start) | webgl                                 |
 | **setRenderAspect**        | change render aspect                                          | AsIs, 1/1, 5/4, 4/3, 16/10, 16/9, Fit |
@@ -99,7 +99,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 
 ## Events
 
-You can listen to js-dos event by providing listener in Dos function:
+You can listen to js-dos events by providing a listener in the Dos function:
 
 ```Javascript
 Dos(elem, {

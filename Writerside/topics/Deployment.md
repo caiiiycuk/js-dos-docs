@@ -1,16 +1,16 @@
 # Deployment
 
-Currently, sockdrive reporistory has only one active deployment, is `sockdrive.js-dos.com:8001`.
+Currently, the sockdrive repository has only one active deployment at `sockdrive.js-dos.com:8001`.
 Geographically it is located in Europe, because of that speed can vary between regions.
 
-We are looking forward to maintainers from other regions. If you want to create a sockdrive mirror, 
+We are looking for maintainers from other regions. If you want to create a sockdrive mirror, 
 please let me know.
 
 ## New deployment
 
-You are also able to create your own sockdrive server with own drives, and run it locally or globally. 
+You can also create your own sockdrive server with your own drives, and run it locally or globally. 
 
-sockdrive server should work fine on any linux distribution like Ubuntu. Download the [**server**](https://cdn.dos.zone/custom/tools/sockdrive-backend-15.11.2024.zip) and
+The sockdrive server should work fine on any linux distribution like Ubuntu. Download the [**server**](https://cdn.dos.zone/custom/tools/sockdrive-backend-15.11.2024.zip) and
 unpack it somewhere.
 
 Folder structure:
@@ -24,7 +24,7 @@ Folder structure:
   - templates/    // drive templates
 ```
 
-included templates:
+Included templates:
 * **fat16-256m** — empty 256Mb drive formatted in fat16
 * **fat32-2gb** — empty 2Gb drive formatted in fat32
 
@@ -40,7 +40,7 @@ included drives (`./cli list system`):
 | system | win95-v2   | Windows 95 (2Gb) with daemon tools          |
 | system | win98-v1   | Windows 98 (2Gb) with daemon tools          |                             
 
-configuration file properties (`config/props.json`):
+Configuration file properties (`config/props.json`):
 
 | property  | description                                                                                             | default value                 |
 |-----------|---------------------------------------------------------------------------------------------------------|-------------------------------|
@@ -110,6 +110,6 @@ And restart PC.
 | **delete** (owner) (name)                        | Delete specified drive                                  |
 | `./cli delete me mywin`                          | Will delete drive my/mywin                              |
 
->  be careful with delete command **dependent drives will stop working** correctly
+> Be careful with the delete command, **dependent drives will stop working** correctly
 > 
 {style="warning"}

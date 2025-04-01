@@ -1,10 +1,10 @@
 # Getting Started
 
-js-dos do not require any backend to start. You need to have some static website hosting where you put
+js-dos does not require any backend to start. You need to have some static website hosting where you put
 your webpage with DOS.
 
-You can start with any template of webpage you want. You only need some div element where to put 
-a dos window.
+You can start with any template of webpage you want. You only need a div element where to place 
+the DOS window.
 
 For example, you can use following template:
 ```html
@@ -40,8 +40,8 @@ Or, install it via [npm](https://www.npmjs.com/package/js-dos).
 
 ## Provide js-dos bundle to run
 
-The easiest way to run some program is to prepare [js-dos bundle](jsdos-bundle.md). You can do it 
-manually, but the easier way is to use [Studio](doszone.md).
+The easiest way to run some program is to prepare a [js-dos bundle](jsdos-bundle.md). You can do it 
+manually, but the easier way is to use [Studio](jsdos-bundle.md).
 
 In this example, we will use a bundle of Digger game.
 Direct link to it: 
@@ -51,8 +51,7 @@ https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdo
 
 ## Create div element and run game
 
-Now, we need to create a `<div>` element in the body section and instruct js-dos to use it as the output element.
-Now, we need to provide some div element and tell js-dos to run bundle using t:
+Create a `<div>` element in the body section and configure js-dos to use it:
 
 ```html
 <div id="dos" style="width: 100vw; height: 60vw;"></div>
@@ -64,9 +63,9 @@ Now, we need to provide some div element and tell js-dos to run bundle using t:
 </script>
 ```
 
-That is, Dos constructor takes two arguments:
+The Dos constructor takes two arguments:
 
-1. **div** element where to put a dos window. We used the id `dos` to indicate to js-dos which element to use.
+1. **div** element where to place the DOS window. We used the id `dos` to indicate to js-dos which element to use.
 2. [**options**](Player-API.md) with initial configuration. We specify url with [**game bundle**](jsdos-bundle.md).
 
 ```Typescript

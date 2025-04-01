@@ -11,7 +11,7 @@ To manage your subscription and player key please open this [8.xx subscription](
 
 ## Create an account
 
-Follow the instructions bellow to create a js-dos account.
+Follow the instructions below to create a js-dos account.
 
 1. Open [8.xx subscription](https://v8.js-dos.com/key/) page
 
@@ -29,7 +29,7 @@ To log in, use the same steps as for creating an account, but use _Login_ tab in
 ![Login Tab](login_tab.jpg)
 {style="block"}
 
-When you are logged, you will see your name and current subscription.
+When you are logged in, you will see your name and current subscription.
 
 ## Subscribe
 
@@ -58,18 +58,18 @@ Then copy the key and paste it into the player:
 
 ## Can I share secret key?
 
-Yep, you can.
-But take in mind that secret key provides direct access to your disk drives and saves.
+Yes, you can share your secret key.
+But keep in mind that the secret key provides direct access to your disk drives and saves.
 In the case of concurrent writing, they **will quickly become broken**.
 
 
 ## Cancel your subscription
 
-Press _Cancle_ button in your subscription details.
+Press _Cancel_ button in your subscription details.
 
 ![cancel-subscription](cancel-subscription.jpg)
 
-In case of any problem, please reach out to xsolla customer support team. 
+If you encounter any issues with your subscription, please reach out to the xsolla customer support team. 
 You can do this by sending an email to [support@xsolla.com](mailto:support@xsolla.com). 
 In your email, kindly include your subscription details and any specific requests or questions you might have. 
 Our support team is dedicated to assisting you and will respond as promptly as possible to help you with the cancellation process.

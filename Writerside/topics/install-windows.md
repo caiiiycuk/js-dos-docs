@@ -4,14 +4,14 @@
 > 
 {style="warning"}
 
-The process of installing is typical for all OSes. You can use this instruction not only for 
-Windows. Installing process includes:
+The installation process is similar for all operating systems. You can use these instructions not only for 
+Windows. The installation process includes:
 
 1. [Fork drive](fork-drive.md)
 2. Setup configuration of DOSBox
 3. Create js-dos bundle
-4. Get installation CD and bootable diskette or bootable CD
-5. Upload this images to FS
+4. Get an installation CD and bootable diskette or bootable CD
+5. Upload these images to the file system
 6. Boot from CD or diskette
 7. Install OS
 
@@ -27,7 +27,7 @@ Here is a tutorial video with a Windows 95 installation process.
 </tabs>
 
 
-## Tune your installation
+## Configure your installation
 
 ### Seamless mouse integration (windows 9x)
 
@@ -81,7 +81,7 @@ Here is a tutorial video with a Windows 95 installation process.
    mount d: .
    ```
 
-When windows started run the **D:\Setup.exe**.
+When Windows starts, run the **D:\Setup.exe**.
 
 ## Windows Installer 2.0 (windows 9x)
 

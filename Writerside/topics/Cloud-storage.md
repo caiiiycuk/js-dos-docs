@@ -1,6 +1,6 @@
 # Cloud saves
 
-By default, js-dos store your game progress in the browser's indexed database. 
+By default, js-dos stores your game progress in the browser's indexed database. 
 This is a great no-cost solution, but it has some **limitations**:
 
 * The browser can clear the database at any moment.
@@ -27,9 +27,9 @@ To save your progress, you need to follow the game's original saving mechanism, 
 
 4. **Keyboard Shortcuts**: Some games implement quick save/load features through keyboard shortcuts. Common shortcuts include pressing keys like F5 to save and F9 to load (though these can vary). Try to look for these shortcuts in the game's manual or settings menu.
 
-5. **Emulator Options**: dosbox-x also offer specific options for saving your game state. This feature saves the exact state of the emulator, allowing you to resume from the exact moment you saved, regardless of the in-game save system. Look for this option in js-dos sidebar. (dosbox-x only!)
+5. **Emulator Options**: dosbox-x also offers specific options for saving your game state. This feature saves the exact state of the emulator, allowing you to resume from the exact moment you saved, regardless of the in-game save system. Look for this option in js-dos sidebar. (dosbox-x only!)
 
-Great, your game progress has been saved! To load it, simply follow the same load mechanism provided by the game.
+Your game progress has been successfully saved! To load it, simply follow the same load mechanism provided by the game.
 
 ## Keep saves between page reload
 
@@ -37,10 +37,10 @@ After saving the game using the game's built-in mechanism, you should explicitly
 
 ![save-button.jpg](save-button.jpg)
 
-Upon successfully storing the saves in persistent storage, you will receive a green toast notification. Now, you can reload the page, and your saves will be retained!
+When your saves are successfully stored in persistent storage, you will receive a green toast notification. Now, you can reload the page, and your saves will be retained!
 
 ## Keep saves between sessions/browsers/devices
 
-For non-subscribed users, js-dos offers a free service that stores your saves inside the browser's IndexedDB. However, this has limitations: it only works within the same browser, and the saves can be wiped suddenly by the browser.
+For non-subscribed users, js-dos provides a free service that stores your saves in the browser's IndexedDB. However, this has limitations: it only works within the same browser, and the saves can be wiped suddenly by the browser.
 
 For **subscribed users**, saves are automatically stored in cloud storage and will be available on all your devices.

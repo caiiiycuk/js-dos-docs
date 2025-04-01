@@ -1,7 +1,7 @@
 # Networking
 
 Some DOS games offer multiplayer gaming based on ipx, modem, or direct connection.
-Using a browser isn't possible to directly connect two clients. BUT, using js-dos cloud, 
+Using a browser, it's not possible to directly connect two clients. BUT, using js-dos cloud, 
 you can emulate direct connection.
 
 > Only IPX protocol is supported right now.
@@ -10,14 +10,14 @@ Here is tutorial video how to use networking with js-dos:
 
 <video src="https://www.youtube.com/watch?v=YH22lZ1EUjM"/>
 
-By default, users able to enjoy these games using the Netherlands server, which is provided by js-dos. 
+By default, users are able to enjoy these games using the Netherlands server, which is provided by js-dos. 
 
 > You need to enable networking features in player using [options](Player-API.md#options)
 
 ## Deploy own ipx backend
 
-As said js-dos provide Netherlands server for free, but it works well only for Europe region. To improve player 
-experience you can deploy own instance of ipx backend.
+As mentioned, js-dos provides the Netherlands server for free, but it works well only for Europe region. To improve player 
+experience you can deploy your own instance of ipx backend.
 
 > If your deployment is permanent and well maintained, then please let us know, we will add it to
 > js-dos player defaults
@@ -26,8 +26,8 @@ experience you can deploy own instance of ipx backend.
 
 ### The Server
 
-The server code is licensed under GPL2 and you can find it [here](https://github.com/caiiiycuk/dosbox-ipx-server).
-This server works as relay it connects multiple js-dos clients together. You need to deploy it on some public available
+The server code is licensed under GPL-2 and you can find it [here](https://github.com/caiiiycuk/dosbox-ipx-server).
+This server works as a relay, connecting multiple js-dos clients together. You need to deploy it on a publicly available
 server.
 
 1. Download the server [binary](https://github.com/caiiiycuk/dosbox-ipx-server/releases/)
@@ -46,7 +46,7 @@ server.
 
 ### Configuring js-dos player
 
-When server is started you can use it with js-dos player. 
+When the server is started, you can use it with js-dos player. 
 For example, if your server is available on host `myipx.com`, [js-dos configuration](Player-API.md) will be:
 
 ```javascript
@@ -66,4 +66,4 @@ For example, if your server is available on host `myipx.com`, [js-dos configurat
     });
 ```
 
-The first element in ipx array will be used as default ipx server.
+The first element in the ipx array will be used as the default ipx server.

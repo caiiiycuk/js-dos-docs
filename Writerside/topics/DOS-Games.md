@@ -1,6 +1,6 @@
 # DOS Games
 
-## Creating bundles with DOS game
+## Creating bundles with DOS games
 
 <tabs>
     <tab title="English">
@@ -29,8 +29,8 @@ Now you need to select one of the available configurations or write your own.
 
 **7.xx is the best option if your program is a plain DOS program**. 
 
-> While you do not need to install Windows program, please use **7.xx** configuration.
-> This configuration compatible both with js-dos 7.xx and 8.xx.
+> While you do not need to install Windows programs, please use **7.xx** configuration.
+> This configuration is compatible with both js-dos 7.xx and 8.xx.
 > 
 {style="note"}
 
@@ -51,11 +51,11 @@ To export use download button.
 
 ![Download bundle](download-bundle.jpg)
 
-When a bundle is ready, the browser will prompt you to save it somewhere on your PC. 
-Now when you have a bundle, go ahead and publish it somewhere.
+When a bundle is ready, the browser will prompt you to save it to your computer. 
+Now that you have a bundle, go ahead and publish it somewhere.
 
-> Due to the performance reasons js-dos archive created **without compression**.
-> If you plan to publish it on your website, please **repack it with maximum compression**.
+> Due to performance reasons, js-dos archives are created **without compression**.
+> If you plan to publish it on your website, please **compress the archive with full compression**.
 > 
 {style="warning"}
 

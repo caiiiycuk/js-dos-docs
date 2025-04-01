@@ -1,11 +1,11 @@
 # Cloud Saves
 
-By default, js-dos store game progress in indexed db of browser. This data can be wiped at any moment by browser.
+By default, js-dos stores game progress in the browser's indexed database. This data can be wiped at any moment by browser.
 You can avoid this problem using js-dos cloud saves.
 
 To activate cloud services, you need to provide your secret key. 
 
-In UI of player (type key in input):
+In the player's UI (type the key in the input):
 
 ![Enter key](enter-key.jpg)
 

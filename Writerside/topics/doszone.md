@@ -1,6 +1,6 @@
 # dos.zone
 
-DOS.Zone - is a js-dos community project. The main target of it is to build repository of `js-dos bundles`, that can be
+DOS.Zone is a js-dos community project. Its main goal is to build a repository of `js-dos bundles` that can be
 easily used to integrate DOS programs on any website.
 
 
@@ -14,9 +14,9 @@ easily used to integrate DOS programs on any website.
 </tabs>
 
 DOS.Zone consists of:
-* [discord](https://discord.com/invite/hMVYEbG), [telegram](https://t.me/doszonechat) to instant talks.
-* [twitter](https://twitter.com/intent/user?screen_name=doszone_db) our news channel
-* [dos.zone](https://dos.zone) it's a default player for `js-dos bundles` based on js-dos api.
+* [discord](https://discord.com/invite/hMVYEbG), [telegram](https://t.me/doszonechat) for instant communication
+* [twitter](https://twitter.com/intent/user?screen_name=doszone_db) our news feed
+* [dos.zone](https://dos.zone) it is the default player for `js-dos bundles` based on js-dos api.
 
 ## Publishing your program
 
