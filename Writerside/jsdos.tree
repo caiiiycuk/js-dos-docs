@@ -9,15 +9,15 @@
     <toc-element topic="Overview.md">
         <toc-element topic="dos-api.md">
         </toc-element>
-        <toc-element topic="jsdos-bundle.md"/>
+        <toc-element topic="jsdos-bundle.md">
+            <toc-element topic="DOS-Games.md">
+            </toc-element>
+            <toc-element topic="Windows-Games.md"/>
+        </toc-element>
         <toc-element topic="Save-Load-Game-Progress.md"/>
         <toc-element topic="Player-API.md"/>
         <toc-element topic="mobile-support.md">
             <toc-element topic="Virtual-Keyboard.md"/>
-        </toc-element>
-        <toc-element topic="v7.md">
-            <toc-element topic="mobile-support-v7.md"/>
-            <toc-element topic="mouse-locking.md"/>
         </toc-element>
         <toc-element topic="Advanced-Topics.md">
             <toc-element topic="working-with-fs.md"/>
@@ -28,6 +28,10 @@
             <toc-element topic="releases.md"/>
         </toc-element>
         <toc-element topic="networking.md"/>
+        <toc-element topic="v7.md">
+            <toc-element topic="mobile-support-v7.md"/>
+            <toc-element topic="mouse-locking.md"/>
+        </toc-element>
         <toc-element topic="Documentation.md"/>
         <toc-element topic="need-help.md">
         </toc-element>
