@@ -11,7 +11,7 @@ use them also with js-dos 6.22.
     Dos(document.getElementById("jsdos"), {
         wdosboxUrl: "https://v8.js-dos.com/v6.22/dosbox.js",
     }).ready((fs, main) => {
-        fs.extract("https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdos").then(() => {
+        fs.extract("https://v8.js-dos.com/bundles/digger.jsdos").then(() => {
             main(["-conf", ".jsdos/dosbox.conf"]);
         });
     });

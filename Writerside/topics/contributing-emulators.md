@@ -302,7 +302,7 @@ all tests should pass.
 
 As said above, you need to compile a `sokol` target with your favorite C++ toolkit. It will generate `sokol`
 executable. Next, you need to download some [js-dos bundle](jsdos-bundle.md) for example
-[digger](https://cdn.dos.zone/original/2X/2/24b00b14f118580763440ecaddcc948f8cb94f14.jsdos).
+[digger](https://v8.js-dos.com/bundles/digger.jsdos).
 
 `js-dos bundle` is a plain zip archive, you need to extract it in some folder. After that you
 should run `sokol` executable from that folder (cwd must be the root of the extracted bundle). 

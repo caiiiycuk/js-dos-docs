@@ -17,7 +17,7 @@ npm install --save emulators jimp
 
 Next we need to download Digger [js-dos bundle](jsdos-bundle.md):
 ```Bash
-curl https://cdn.dos.zone/original/2X/2/24b00b14f118580763440ecaddcc948f8cb94f14.jsdos -o digger.jsdos
+curl https://v8.js-dos.com/bundles/digger.jsdos -o digger.jsdos
 ```
 
 Let's create source file `digger.js`. We can run it with this command `node digger.js`

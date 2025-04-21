@@ -48,7 +48,7 @@ Then set `emulators.pathPrefix` pointing to the correct location:
 
 Then you need to download js-dos bundle (for example, Digger game), and instantiate emulators:
 ```Typescript
-const bundle = await fetch("https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdos");
+const bundle = await fetch("https://v8.js-dos.com/bundles/digger.jsdos");
 const ci = await emulators.dosWorker(new Uint8Array(await bundle.arrayBuffer()));
 ```
 

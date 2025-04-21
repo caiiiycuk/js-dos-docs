@@ -46,7 +46,7 @@ manually, but the easier way is to use [Studio](jsdos-bundle.md).
 In this example, we will use a bundle of Digger game.
 Direct link to it: 
 ```
-https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdos
+https://v8.js-dos.com/bundles/digger.jsdos
 ```
 
 ## Create div element and run game
@@ -58,7 +58,7 @@ Create a `<div>` element in the body section and configure js-dos to use it:
 
 <script>
     Dos(document.getElementById("dos"), {
-        url: "https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdos",
+        url: "https://v8.js-dos.com/bundles/digger.jsdos",
     });
 </script>
 ```

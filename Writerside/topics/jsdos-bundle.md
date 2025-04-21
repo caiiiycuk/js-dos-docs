@@ -7,7 +7,7 @@
 
 **Starting from js-dos v7**, the API expects a `js-dos bundle` that already contains all configuration needed to start the DOS program.
 `js-dos bundle` is just a **ZIP** archive that contains the game itself and a js-dos configuration file (same as dosbox.conf file). 
-For example, [digger.jsdos](https://cdn.dos.zone/original/2X/9/9ed7eb9c2c441f56656692ed4dc7ab28f58503ce.jsdos) contains: 
+For example, [digger.jsdos](https://v8.js-dos.com/bundles/digger.jsdos) contains: 
 ```
 .jsdos/dosbox.conf - dosbox configuration file (required)
 .jsdos/jsdos.json  - additional configuration (optional)
