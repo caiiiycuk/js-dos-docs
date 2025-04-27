@@ -34,4 +34,8 @@
         <description>Created after removal of "FAT Drives (sockdrive)" from js-dos</description>
         <accepts>sockdrive.html</accepts>
     </rule>
+    <rule id="1c6a1a32">
+        <description>Created after removal of "Windows Games" from js-dos</description>
+        <accepts>Windows-Games.html</accepts>
+    </rule>
 </rules>

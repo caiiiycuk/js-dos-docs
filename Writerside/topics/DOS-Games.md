@@ -1,17 +1,17 @@
-# DOS Games
+# MS-DOS Game
 
-## Creating bundles with DOS games
+## Creating bundles with MS-DOS game
 
 <tabs>
     <tab title="English">
        <strong>Tutorial Video:</strong>
-       <video src="https://www.youtube.com/watch?v=erq29Tsd9U8" />
+       <video src="https://www.youtube.com/watch?v=kRyIr_6YxjM" />
     </tab>
     <tab title="Russian">
       <strong>Обучающее видео:</strong>
-      <video src="https://www.youtube.com/watch?v=PWugVpHx87M" />
+      <video src="https://www.youtube.com/watch?v=kRyIr_6YxjM" />
       <strong>Как крафтить игры от NicCarter54:</strong>
-      <video src="https://www.youtube.com/watch?v=7WfMcQt38c0" />
+      <video src="https://www.youtube.com/watch?v=-w8cpM7CTUk" />
     </tab>
 </tabs>
 

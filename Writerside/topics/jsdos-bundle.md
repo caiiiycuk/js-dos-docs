@@ -1,11 +1,11 @@
-# Crafting Games
+# Bundles cookbook 
 
 > If you are looking for a way to run your favorite game in browser, but do not want to develop website,
 > then please create bundle for it using this guide, and send request to publis it on [dos.zone](doszone.md)
 > 
 {style="note"}
 
-**Starting from js-dos v7**, the API expects a `js-dos bundle` that already contains all configuration needed to start the DOS program.
+**Starting from js-dos 7.xx**, the API expects a `js-dos bundle` that already contains all configuration needed to start the DOS program.
 `js-dos bundle` is just a **ZIP** archive that contains the game itself and a js-dos configuration file (same as dosbox.conf file). 
 For example, [digger.jsdos](https://v8.js-dos.com/bundles/digger.jsdos) contains: 
 ```
@@ -20,16 +20,15 @@ DIGGER.COM         - game file
 
 You can generate a `js-dos bundle` programmatically. But we recommend you use our [Game Studio](https://v8.js-dos.com/studio)
 
-## Tutorials
+## Cookbook 
 
-We provide separate tutorials for DOS and Windows games. However, the choice between tutorials should be based not only on the operating system - if you're working with large DOS games, we recommend following the Windows tutorial to ensure the best gaming experience.
+We provide separate tutorials for DOS and Windows games. However, the choice between tutorials should be based not only on the operating system - if you're working with large DOS games, we recommend following the sockdrive tutorial to ensure the best gaming experience.
 
-* [DOS](DOS-Games.md)
-* [Windows 3.11/95/98](Windows-Games.md)
-
-> DOS tutorial is suitable only for games smaller than 100MB
-> 
-{style="warning"}
+* [MS-DOS Game **(<100Mb)**](DOS-Games.md)
+* MS-DOS Sockdrive **(>100Mb)**
+* Windows 3.11
+* Windows 95/98
+* Installing new OS
 
 ## Advanced configuration
 
