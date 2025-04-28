@@ -28,7 +28,8 @@ We provide separate tutorials for DOS and Windows games. However, the choice bet
 * MS-DOS Sockdrive **(>100Mb)**
 * Windows 3.11
 * Windows 95/98
-* Installing new OS
+* [Install DOS](install-os.md)
+* Installing Windows
 
 ## Advanced configuration
 

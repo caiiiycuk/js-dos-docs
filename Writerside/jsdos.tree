@@ -12,6 +12,7 @@
         <toc-element topic="jsdos-bundle.md">
             <toc-element topic="DOS-Games.md">
             </toc-element>
+            <toc-element topic="install-os.md"/>
         </toc-element>
         <toc-element topic="Save-Load-Game-Progress.md"/>
         <toc-element topic="Player-API.md"/>
