@@ -1,6 +1,10 @@
-# MS-DOS Game
+# MS-DOS Game (<100 Mb)
 
-## Creating bundles with MS-DOS game
+> Use this game for relatively small games up to 100Mb. For bigger games please use [Sockdrive guide](msdos-sockdrive.md)
+>
+{style="note"}
+
+## Creating bundle with MS-DOS game
 
 <tabs>
     <tab title="English">
@@ -19,7 +23,7 @@ To create a bundle, you need to perform the following steps:
 
 ### 1. Create an empty bundle and select dosbox configuration
 
-To do this, press on **Create empty bundle** link.
+First, open [Game Studio](https://v8.js-dos.com/studio) and then press on **Create empty bundle** link.
 ![Create empty bundle](create-empty-bundle.jpg)
 {style="block"}
 

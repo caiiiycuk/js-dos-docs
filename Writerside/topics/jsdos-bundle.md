@@ -25,11 +25,10 @@ You can generate a `js-dos bundle` programmatically. But we recommend you use ou
 We provide separate tutorials for DOS and Windows games. However, the choice between tutorials should be based not only on the operating system - if you're working with large DOS games, we recommend following the sockdrive tutorial to ensure the best gaming experience.
 
 * [MS-DOS Game **(<100Mb)**](DOS-Games.md)
-* MS-DOS Sockdrive **(>100Mb)**
+* [MS-DOS Sockdrive **(2GB)**](msdos-sockdrive.md)
 * Windows 3.11
 * Windows 95/98
-* [Install DOS](install-os.md)
-* Installing Windows
+* [Install OS](install-os.md)
 
 ## Advanced configuration
 
