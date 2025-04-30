@@ -49,6 +49,7 @@ It returns `DosProps` to control the created player
 | **softKeyboardLayout**  | initial virtual keyboard layout, [read more](Virtual-Keyboard.md)                                                                                                                                                                    | str[]                                                                                                                                                                                                                                                 | qwerty      |
 | **softKeyboardSymbols** | initial virtual keyboard symbols                                                                                                                                                                                                     | map[]                                                                                                                                                                                                                                                 | en, ru      |
 | **softFullscreen**      | If set to `true`, fullscreen will not use the `requestFullscreen()` method. Instead, it will add the `jsdos-fullscreen-workaround` class to the root element. You need to ensure that this element occupies the entire page content. | bool                                                                                                                                                                                                                                                  | false       |
+| **thinSidebar**         | If set to `true` player will start with thin sidebar                                                                                                                                                                                 | bool                                                                                                                                                                                                                                                  | false       |
 
 
 > All options are optional
@@ -98,6 +99,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setSoftKeyboardLayout**  | set virtual keyboard layout                                   | string[]                              |
 | **setSoftKeyboardSymbols** | set virtual keyboard symbols                                  | map[]                                 |
 | **setSoftFullscreen**      | set soft fullscreen                                           | bool                                  |
+| **setThinSidebar**         | swith between normal and thin sidebar                         | bool                                  |
 | **save**                   | trigger to save changes in FS, return `Promise<boolean>`      | -                                     |
 | **stop**                   | kill the emulation (use to stop player)                       | -                                     |
 
