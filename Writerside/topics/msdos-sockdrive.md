@@ -11,9 +11,9 @@ To create a bundle, you need to perform the following steps:
 ### 1. Open Studio and download base image
 
 First, open [Game Studio](https://v8.js-dos.com/studio) and then 
-press on **DOS v7.1** to download `MS-DOS 7.1` base image.
+press **DOS v7.1** to download the `MS-DOS 7.1` base image.
 
-Now load base image using **Load button**.
+Now load the base image using the **Load button**.
 ![Load button](loadbutton.png)
 {style="block"}
 
@@ -23,8 +23,8 @@ Press the "Run" button.
 ![The run button](the-run-button.jpg)
 {style="block"}
 
-When the emulator is started, open the File System panel using the disk icon.
-Use upload file, or upload folder button to add your files to bundle File System.
+When the emulator starts, open the File System panel using the disk icon.
+Use the upload file or upload folder button to add your files to the bundle File System.
 
 ![Upload files](upload-files.jpg)
 
@@ -83,3 +83,27 @@ When a bundle is ready, the browser will prompt you to save it to your computer.
 {style="warning"}
 
 Follow [Publish Sockdrive](Publish-Sockdrive-bundle.md) tutorial.
+
+
+## CD-ROM support
+
+Some games require CD-ROM emulation to start. Sometimes, you can simply use the SUBST command. You can mount a folder
+to a drive letter, like this:
+
+```sh
+SUBST D: C:\CD
+```
+
+Then you can access drive `D:`, which will be mapped to the given folder. However, some games can check if this drive is
+actually a CD-ROM or not. In that case, you can use FakeCd or FakeDr.
+
+Here you can download [FakeCD](https://cdn.dos.zone/custom/tools/fakecd0c.zip). This archive contains a doc file with
+documentation, but in the simplest case, you can use it like this:
+
+```sh
+fakecd C:\CD /l:d
+```
+
+This command will map folder `CD` to drive `D:` using a driver. This works in most cases. If not, you can try to use
+the even more powerful FakeDr - you can get it and read the documentation on the [program website](https://www.math.uni-rostock.de/~nfa506/fakecddr.html).
+
