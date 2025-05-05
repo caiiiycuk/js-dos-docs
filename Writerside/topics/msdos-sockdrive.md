@@ -107,3 +107,6 @@ fakecd C:\CD /l:d
 This command will map folder `CD` to drive `D:` using a driver. This works in most cases. If not, you can try to use
 the even more powerful FakeDr - you can get it and read the documentation on the [program website](https://www.math.uni-rostock.de/~nfa506/fakecddr.html).
 
+**Tutorial Video:**
+
+<video src="https://www.youtube.com/watch?v=1Et7Mr_GDH8" />
