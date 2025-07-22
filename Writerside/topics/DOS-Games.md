@@ -4,6 +4,11 @@
 >
 {style="note"}
 
+> Due to performance reasons, studio create js-dos archives **without compression**.
+> If you plan to publish it on your website, please **compress the archive with full compression**.
+>
+{style="warning"}
+
 ## Creating bundle with MS-DOS game
 
 <tabs>
@@ -57,11 +62,6 @@ To export use download button.
 
 When a bundle is ready, the browser will prompt you to save it to your computer. 
 Now that you have a bundle, go ahead and publish it somewhere.
-
-> Due to performance reasons, js-dos archives are created **without compression**.
-> If you plan to publish it on your website, please **compress the archive with full compression**.
-> 
-{style="warning"}
 
 > If you need to change the configuration of bundle in the middle, you can use the restart button. It 
 > will redirect you back to the configuration editor.

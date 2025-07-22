@@ -1,5 +1,12 @@
 # MS-DOS Sockdrive (2GB)
 
+> Do not publish sockdrive bundle as is — they are large and does not support save/load functionality.
+> 
+> Follow **[Publish Sockdrive](Publish-Sockdrive-bundle.md)** tutorial instead.
+>
+{style="warning"}
+
+
 ## Creating bundle with MS-DOS game (using Sockdrive)
 
 **Tutorial Video:**
@@ -75,15 +82,6 @@ Run emulation, test it and then export using download button.
 ![Download bundle](download-bundle.jpg)
 
 When a bundle is ready, the browser will prompt you to save it to your computer.
-
-## Publish Sockdrive bundle
-
-> Do not publish this bundle as is — it is too large and does not support save/load functionality. 
-> 
-{style="warning"}
-
-Follow [Publish Sockdrive](Publish-Sockdrive-bundle.md) tutorial.
-
 
 ## CD-ROM support
 
