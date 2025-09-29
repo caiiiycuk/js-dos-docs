@@ -1,7 +1,7 @@
 # Bundles cookbook 
 
 > If you are looking for a way to run your favorite game in browser, but do not want to develop website,
-> then please create bundle for it using this guide, and send request to publis it on [dos.zone](doszone.md)
+> then please create bundle for it using this guide, and send request to publish it on [dos.zone](doszone.md)
 > 
 {style="note"}
 
@@ -27,7 +27,7 @@ We provide separate tutorials for DOS and Windows games. However, the choice bet
 * [MS-DOS Game **(<100Mb)**](DOS-Games.md)
 * [MS-DOS Sockdrive **(2GB)**](msdos-sockdrive.md)
 * Windows 3.11
-* Windows 95/98
+* [Windows 95/98](win9x-sockdrive.md)
 * [Install OS](install-os.md)
 
 ## Advanced configuration
