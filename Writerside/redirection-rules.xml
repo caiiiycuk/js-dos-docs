@@ -38,4 +38,12 @@
         <description>Created after removal of "Windows Games" from js-dos</description>
         <accepts>Windows-Games.html</accepts>
     </rule>
+    <rule id="50d26c3f">
+        <description>Created after removal of "Subscription" from js-dos</description>
+        <accepts>Subscription.html</accepts>
+    </rule>
+    <rule id="2364d10d">
+        <description>Created after removal of "Saves" from js-dos</description>
+        <accepts>saves-overview.html</accepts>
+    </rule>
 </rules>

@@ -39,10 +39,6 @@
         <toc-element topic="need-help.md">
         </toc-element>
     </toc-element>
-    <toc-element topic="cloud-overview.md">
-        <toc-element topic="Subscription.md"/>
-        <toc-element topic="Cloud-storage.md"/>
-    </toc-element>
     <toc-element topic="emulators.md">
         <toc-element topic="threejs.md">
             <toc-element topic="Browser.md"/>
