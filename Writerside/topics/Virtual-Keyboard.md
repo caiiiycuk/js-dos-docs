@@ -46,7 +46,7 @@ Will define the following keyboard:
 You can provide multiple layouts and switch between them with special `{layout}` button:
 
 ```Javascript
-  softkeyboardlayout: [
+  softKeyboardLayout: [
     [
       [
         "{layout} {up}",

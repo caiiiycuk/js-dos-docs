@@ -22,7 +22,7 @@ DOS.Zone consists of:
 
 <tabs>
     <tab title="Russian">
-      <strong>Как крафтить игры от NicCarter54:</strong>
+      <strong>How to craft games by NicCarter54:</strong>
       <video src="https://www.youtube.com/watch?v=7WfMcQt38c0" />
     </tab>
 </tabs>

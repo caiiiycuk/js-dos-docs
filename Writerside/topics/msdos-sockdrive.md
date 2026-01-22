@@ -1,6 +1,6 @@
 # MS-DOS Sockdrive (2GB)
 
-> Do not publish sockdrive bundle as is — they are large and does not support save/load functionality.
+> Do not publish sockdrive bundle as is — they are large and do not support save/load functionality.
 > 
 > Follow **[Publish Sockdrive](Publish-Sockdrive-bundle.md)** tutorial instead.
 >
@@ -47,7 +47,7 @@ To boot from base image type in console:
 boot c:
 ```
 
-When ms-dos finish loading start Volkov Commander using this command:
+When ms-dos finishes loading, start Volkov Commander using this command:
 ```sh
 vc\vc.com
 ```

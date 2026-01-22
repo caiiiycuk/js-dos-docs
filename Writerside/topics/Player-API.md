@@ -58,7 +58,7 @@ It returns `DosProps` to control the created player
 DosProps are properties that you can use to control player after creation, use it like this:
 
 ```Javascript
-cost props = Dos(elem, options);
+const props = Dos(elem, options);
 props.setFullScreen(true); // switch to fullscreen mode
 ```
 
@@ -76,7 +76,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setBackground**          | change background image                                              | URL                                   |
 | **setFullScreen**          | change fullscreen mode                                               | bool                                  |
 | **setAutoStart**           | change auto start                                                    | bool                                  |
-| **setCountDownStart**      | set count down to aut start in seconds                               | number                                |
+| **setCountDownStart**      | set count down to auto start in seconds                               | number                                |
 | **setAutoSave**            | change auto save mode                                                | bool                                  |
 | **setKiosk**               | change kiosk mode                                                    | bool                                  |
 | **setImageRendering**      | change image rendering                                               | pixelated, smooth                     |
@@ -92,7 +92,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setSoftKeyboardLayout**  | set virtual keyboard layout                                          | string[]                              |
 | **setSoftKeyboardSymbols** | set virtual keyboard symbols                                         | map[]                                 |
 | **setSoftFullscreen**      | set soft fullscreen                                                  | bool                                  |
-| **setThinSidebar**         | swith between normal and thin sidebar                                | bool                                  |
+| **setThinSidebar**         | switch between normal and thin sidebar                                | bool                                  |
 | **save**                   | trigger to save changes in FS, return `Promise<boolean>`             | -                                     |
 | **stop**                   | kill the emulation (use to stop player)                              | -                                     |
 

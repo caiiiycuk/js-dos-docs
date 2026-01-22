@@ -1,6 +1,6 @@
 # Windows 9x
 
-> Do not publish sockdrive bundle as is — they are large and does not support save/load functionality.
+> Do not publish sockdrive bundle as is — they are large and do not support save/load functionality.
 >
 > Follow **[Publish Sockdrive](Publish-Sockdrive-bundle.md)** tutorial instead.
 >
@@ -108,7 +108,7 @@ Sometimes a game can crash due to an incompatible driver. You can try installing
 
 ## Pointer lock (mouse capture)
 
-By default, dosboxx + win9x works fine without mouse capture, but if you need it also supported. 
+By default, dosbox-x + win9x works fine without mouse capture, but if you need it, it is also supported. 
 To enable it follow this steps:
 
 1. Start system without mouse capture

@@ -8,8 +8,10 @@ Once you run some [js-dos bundle](jsdos-bundle.md) you will receive `Command Int
         <code-block lang="typescript">
             Dos(/*element*/, {
                 url: /* bundle url */,
-                onEvent: ("ci-ready", ci: CommandInterface) {
-                    // now ci s ready
+                onEvent: (event, ci: CommandInterface) => {
+                    if (event === "ci-ready") {
+                        // now ci is ready
+                    }
                 },
             );
         </code-block>

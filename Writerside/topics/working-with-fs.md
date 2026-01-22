@@ -6,8 +6,10 @@ You can get it from the event:
 ```Javascript
  Dos(/*element*/, {
     url: /* bundle url */,
-    onEvent: ("ci-ready", ci: CommandInterface) {
-        // now ci s ready
+    onEvent: (event, ci: CommandInterface) => {
+        if (event === "ci-ready") {
+            // now ci is ready
+        }
     },
 );
 ```
@@ -22,7 +24,7 @@ fsReadFile(file: string): Promise<Uint8Array>;
 
 This function will read the file from the given path and return the promise to Uint8Array.
 
-> You must wait while the promise is resolved, js-dos able to read/write/delete only one file once.
+> You must wait while the promise is resolved, js-dos is able to read/write/delete only one file once.
 > 
 {style="warning"}
 
@@ -50,7 +52,7 @@ fsDeleteFile(file: string): Promise<void>;
 ```
 
 Delete file from FS.
-> You must wait while the promise is resolved, js-dos able to read/write/delete only one file once.
+> You must wait while the promise is resolved, js-dos is able to read/write/delete only one file once.
 >
 {style="warning"}
 

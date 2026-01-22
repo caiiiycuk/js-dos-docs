@@ -4,7 +4,7 @@
 >
 {style="note"}
 
-> Due to performance reasons, studio create js-dos archives **without compression**.
+> Due to performance reasons, studio creates js-dos archives **without compression**.
 > If you plan to publish it on your website, please **compress the archive with full compression**.
 >
 {style="warning"}

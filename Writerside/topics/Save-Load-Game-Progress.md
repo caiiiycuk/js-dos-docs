@@ -45,7 +45,7 @@ When your saves are successfully stored in persistent storage, you will receive 
 
 ## Disable saves
 
-Вы так же можете полностью отключить сохранеия в js-dos, для этого создайте экземпля Dos со следующими настройками:
+You can also completely disable saves in js-dos. To do this, create a Dos instance with the following settings:
 
 ```
 Dos(el, {
@@ -57,8 +57,8 @@ Dos(el, {
 
 ## Change the key for bundle
 
-По умолачнию для каждого url в indexed db создается компаньон оканчивающися на `.changes`. В большинстве случае это работает
-правильно, но иногда вам нужно больше контроля за ключём сохранения, вы можете иге изменить следующим образом:
+By default, for each URL a companion ending with `.changes` is created. In most cases this works
+correctly, but sometimes you need more control over the save key. You can change it as follows:
 
 ```
 Dos(el, {
@@ -73,8 +73,8 @@ Dos(el, {
 
 ## Implementing custom storage
 
-Вы так же можете релизовать свой механизм хранения прогреса в играх. Для этого вам нужно передать в опции DOS конфигурационный объект
-с настройками хранилища:
+You can also implement your own mechanism for storing game progress. To do this, you need to pass a configuration object
+with storage settings in the DOS options:
 
 ```js
 Dos(el, {
@@ -84,7 +84,7 @@ Dos(el, {
             return // Uint8Array or null, same that were stored in push
         },
         push: async (key: string, data: Uint8Array) => {
-            // sotre given data and return it whenever pull asks
+            // store given data and return it whenever pull asks
         },
         delete: async (key: string) => {
             // delete given key
@@ -93,6 +93,6 @@ Dos(el, {
 });
 ```
 
-## Retreiving current changes
+## Retrieving current changes
 
-You can retrive current local changes by calling `getLocalChanges(key)`
+You can retrieve current local changes by calling `getLocalChanges(key)`

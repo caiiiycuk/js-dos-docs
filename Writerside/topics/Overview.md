@@ -6,7 +6,7 @@ js-dos is a frontend for [emulators](https://github.com/caiiiycuk/emulators) tha
 to run DOS or Windows programs in browser.
 
 It provides full-featured **DOS player** that can be easily installed and used to get your DOS program up and running in
-browser quickly. js-dos provide many advanced features like multiplayer and cloud storage. 
+browser quickly. js-dos provides many advanced features like multiplayer and cloud storage. 
 All available features are enabled for any integration and free.
 
 The key features:

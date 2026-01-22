@@ -9,7 +9,7 @@ To contribute to the `emulators` package, do the following:
   
   `git clone https://github.com/js-dos/emulators`
 
-2. Install [emscripten sdk](https://emscripten.org/docs/tools_reference/emsdk.html), and confgure environment to use it.
+2. Install [emscripten sdk](https://emscripten.org/docs/tools_reference/emsdk.html), and configure environment to use it.
 
 3. Install [cmake](https://cmake.org/) and [gulp 4](https://gulpjs.com/).
 

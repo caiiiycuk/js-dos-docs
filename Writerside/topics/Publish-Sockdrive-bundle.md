@@ -83,7 +83,7 @@ Numbers for [Turok 3Dfx](https://dos.zone/turok-dinosaur-hunter/):
 You need to publish:
 
 1. **./sockdrive** folder as explained before
-2. **bundle-sockidifed.jsdos** - it's a typical jsdos bundle that configured to use sockdrive you created
+2. **bundle-sockified.jsdos** - it's a typical jsdos bundle that configured to use sockdrive you created
 
 ## First run optimization
 
@@ -116,7 +116,7 @@ echo '[0,...,545]' | brotli > /tmp/preload_ranges.metaj
 Now, you have file `/tmp/preload_ranges.metaj` that contains sectors of disk that need to be preloaded, put
 it into _./sockdrive/bundle-..._ folder, and it will be applied automatically.
 
-> This command generate `preload_ranges.metaj` and automatically compress it with brotli. 
+> This command generates `preload_ranges.metaj` and automatically compresses it with brotli. 
 > If you use gzip, then replace brotli with gz in command above.
 >
 {style="warning"}

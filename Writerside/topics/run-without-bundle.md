@@ -21,7 +21,7 @@ Dos(document.getElementById("app"), {
   `,
   onEvent: (event, ci) => {
     if (event === "ci-ready") {
-        // ci: [[[CommandIterface|command-interface.md]]] is ready
+        // ci: [[[CommandInterface|command-interface.md]]] is ready
     }
   },
 });
@@ -91,7 +91,7 @@ Dos(document.getElementById("app"), {
   ],
   onEvent: (event, ci) => {
     if (event === "ci-ready") {
-        // ci: [[[CommandIterface|command-interface.md]]] is ready
+        // ci: [[[CommandInterface|command-interface.md]]] is ready
     }
   },
 });

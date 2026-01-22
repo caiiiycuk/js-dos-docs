@@ -16,7 +16,7 @@ Some games, especially designed for Windows, can be huge. They easily take up to
 In that case, packaging game files into a bundle is no sense, resulting bundle will be big to download 
 and can reach the memory limit of browser in runtime.
 
-Especially for such intergations, sockdrive was designed.
+Especially for such integrations, sockdrive was designed.
 
 ## Remote HDD drives
 
@@ -68,4 +68,4 @@ Everybody even anonymous users can use js-dos with attached sockdrives.
 Only users with active subscription will be able to write into remote hdd and store progress, as well as
 create new hdd drives.
 
-> Only owner of drive can directly write to it for other users drive is forked internally. 
+> Only the owner of a drive can directly write to it; for other users, the drive is forked internally. 

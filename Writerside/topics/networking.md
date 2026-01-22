@@ -42,7 +42,7 @@ server.
    |-----------------|--------------------------|
    | ./server        | server binary            |
    | -c cert.pem     | path to SSL certificate  |
-   | -k privekey.pem | path to private key file |
+   | -k privkey.pem  | path to private key file |
 
 ### Configuring js-dos player
 
