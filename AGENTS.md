@@ -6,3 +6,7 @@ The documented code is split into two main parts:
 
 - Backend: handles emulation. Related snippets live in `Writerside/snippets/emulators`.
 - Frontend: renders the emulator player window. Related snippets live in `Writerside/snippets/js-dos`.
+
+## Documentation Style
+
+- Keep language names as they are used in this documentation: write `Typescript` and `Javascript`, not `TypeScript` and `JavaScript`.

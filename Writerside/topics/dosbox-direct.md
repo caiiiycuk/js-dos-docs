@@ -1,13 +1,13 @@
 # DOSBox Direct
 
-DOS Direct is an emulation backend based on DOSBox, you can create it with the following command:
+DOSBox Direct is an emulation backend based on DOSBox. You can create it with the following command:
 
 ```Javascript
 const ci = await emulators.dosboxDirect(bundle);
 ```
 
-Direct version is universal, it can work in Node.js environment. But it has a strong disadvantage: it's working on the 
-main browser thread. So it can easily the app froze a browser for some amount of time, and not be very responsive.
+The Direct version is universal and can work in a Node.js environment. Its main disadvantage is that it runs on the main
+browser thread, so it can freeze the app for some time and make it less responsive.
 
 > [DOSBox Worker](dosbox-worker.md) is a more preferred version of the emulator backend, because it does not block the browser.
 > 
@@ -15,14 +15,14 @@ main browser thread. So it can easily the app froze a browser for some amount of
 
 ### Accessing file system
 
-In direct mode you can easily access emscripten module:
+In direct mode you can easily access the Emscripten module:
 
 ```Javascript
 const ci = await emulators.dosboxDirect(bundle);
 ci.transport.module // <-- emscripten module
 ```
 
-Emscripten module provide lowlevel api to change [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html):
+The Emscripten module provides a low-level API to change the [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html):
 
 ```Javascript
 const ci = await emulators.dosboxDirect(bundle);
@@ -37,7 +37,7 @@ ci.transport.module._rescanFilesystem();
 
 ### Accessing memory
 
-In direct mode you can dump whole memory of dos:
+In direct mode you can dump the whole memory of DOS:
 
 ```Javascript
 const ci = await emulators.dosboxDirect(bundle);
@@ -86,8 +86,8 @@ The `memoryContents` contains the following:
 
 ### Pausing execution
 
-In direct mode, you can pause the Dosbox execution loop without pausing the
-emscripten loop.  This lets you pause and inspect the current memory, for
+In direct mode, you can pause the DOSBox execution loop without pausing the
+Emscripten loop. This lets you pause and inspect the current memory, for
 instance.
 
 ```Javascript

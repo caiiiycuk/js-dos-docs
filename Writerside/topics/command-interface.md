@@ -1,7 +1,7 @@
 # Command Interface (CI)
 
-The `Command Interface` is only one object that allows you to communicate with js-dos instance.
-Once you run some [js-dos bundle](jsdos-bundle.md) you will receive `Command Interface` instance.
+The `Command Interface` is the object that allows you to communicate with a js-dos instance.
+Once you run a [js-dos bundle](jsdos-bundle.md), you will receive a `Command Interface` instance.
 
 <tabs>
     <tab title="v8">
@@ -13,7 +13,7 @@ Once you run some [js-dos bundle](jsdos-bundle.md) you will receive `Command Int
                         // now ci is ready
                     }
                 },
-            );
+            });
         </code-block>
     </tab>
     <tab title="v7">
@@ -46,13 +46,14 @@ export interface CommandInterface {
     sendBackendEvent: (event: any) => void;
     persist(onlyChanges?: boolean): Promise<Uint8Array | null>;
     events(): CommandInterfaceEvents;
+    net(): Net | null;
     networkConnect(networkType: NetworkType, address: string): Promise<void>;
     networkDisconnect(networkType: NetworkType): Promise<void>;
     asyncifyStats(): Promise<AsyncifyStats>;
     fsTree(): Promise<FsNode>;
     fsReadFile(file: string): Promise<Uint8Array>;
     fsWriteFile(file: string, contents: ReadableStream<Uint8Array> | Uint8Array): Promise<void>;
-    fsDeleteFile(file: string): Promise<void>;
+    fsDeleteFile(file: string): Promise<boolean>;
 }
 ```
 
@@ -69,5 +70,6 @@ export interface CommandInterfaceEvents {
     onMessage: (consumer: (msgType: MessageType, ...args: any[]) => void) => void;
     onNetworkConnected: (consumer: (networkType: NetworkType, address: string) => void) => void;
     onNetworkDisconnected: (consumer: (networkType: NetworkType) => void) => void;
+    onUnload: (consumer: () => Promise<void>) => void;
 }
 ```

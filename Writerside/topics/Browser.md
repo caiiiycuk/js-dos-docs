@@ -49,7 +49,7 @@ Then set `emulators.pathPrefix` pointing to the correct location:
 Then you need to download js-dos bundle (for example, Digger game), and instantiate emulators:
 ```Typescript
 const bundle = await fetch("https://v8.js-dos.com/bundles/digger.jsdos");
-const ci = await emulators.dosWorker(new Uint8Array(await bundle.arrayBuffer()));
+const ci = await emulators.dosboxWorker(new Uint8Array(await bundle.arrayBuffer()));
 ```
 
 Now the DOS program is started in worker, and we need to render it on the screen.

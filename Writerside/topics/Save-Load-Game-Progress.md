@@ -1,17 +1,18 @@
 # Save/Load
 
 js-dos supports saving and restoring game progress. You can play the game from time to time
-without losing progress. It works automatically while you don't change bundle url.
+without losing progress. It works automatically while you don't change the bundle URL.
 
-This feature works by dumping changes in file system into second `bundle` and use it to override original file system on next load. You can read more about actual implementation [here](Save-Load.md).
+This feature works by dumping file system changes into a second `bundle` and using it to override the original file
+system on the next load. You can read more about the implementation [here](Save-Load.md).
 
-The Save/Load feature works automatically whenever the player presses **save icon**. However, game itself should
+The Save/Load feature works automatically whenever the player presses the **save icon**. However, the game itself should
 support storing progress.
 
 ![save-button.jpg](save-button.jpg)
 
-> By default, js-dos stores game progress in indexed db of browser. This data can be wiped at any moment by browser.
-> You can avoid this problem implementing your own storage.
+> By default, js-dos stores game progress in the browser's IndexedDB. This data can be wiped by the browser at any time.
+> You can avoid this problem by implementing your own storage.
 >
 {style="warning"}
 

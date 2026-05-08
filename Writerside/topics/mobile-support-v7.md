@@ -73,7 +73,7 @@ You can't customize `Nipple Activator` control yet.
 
 ## Pointer Button Control
 
-`Pointer Button` is a virtual button that changes the behaviour of click/tap. By default, click/tap is interpreted as left mouse button click. With this control you can change it to right button peramnently or temporary (while holding it).
+`Pointer Button` is a virtual button that changes the behavior of click/tap. By default, click/tap is interpreted as a left mouse button click. With this control you can change it to the right button permanently or temporarily while holding it.
 
 This control has a `click` property, if it is set, then clicking on the virtual button will set the pointer button to the right mouse button for next game click/tap. In the other case the button will be set to the right mouse button while you are holding the virtual button.
 

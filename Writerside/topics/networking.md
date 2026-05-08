@@ -1,23 +1,23 @@
 # Networking
 
-Some DOS games offer multiplayer gaming based on ipx, modem, or direct connection.
-Using a browser, it's not possible to directly connect two clients. BUT, using js-dos cloud, 
+Some DOS games offer multiplayer gaming based on IPX, modem, or direct connection.
+Using a browser, it's not possible to directly connect two clients. However, using js-dos cloud,
 you can emulate direct connection.
 
 > Only IPX protocol is supported right now.
 
-Here is tutorial video how to use networking with js-dos:
+Here is a tutorial video on how to use networking with js-dos:
 
 <video src="https://www.youtube.com/watch?v=YH22lZ1EUjM"/>
 
-By default, users are able to enjoy these games using the Netherlands server, which is provided by js-dos. 
+By default, users are able to enjoy these games using the js-dos networking service.
 
 > You need to enable networking features in player using [options](Player-API.md#options)
 
-## Deploy own ipx backend
+## Deploy your own networking backend
 
-As mentioned, js-dos provides the Netherlands server for free, but it works well only for Europe region. To improve player 
-experience you can deploy your own instance of ipx backend.
+As mentioned, js-dos provides a public networking service, but for lower latency or custom deployments you can use your
+own peer server.
 
 > If your deployment is permanent and well maintained, then please let us know, we will add it to
 > js-dos player defaults
@@ -46,24 +46,24 @@ server.
 
 ### Configuring js-dos player
 
-When the server is started, you can use it with js-dos player. 
-For example, if your server is available on host `myipx.com`, [js-dos configuration](Player-API.md) will be:
+When the server is started, you can use it with js-dos player.
+For example, if your peer server is available at `https://net.example.com`, [js-dos configuration](Player-API.md) will be:
 
 ```javascript
-    const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(location.search);
 // ...
-    Dos(el, {
-          ipxBackend: params.get("ipxBackend"),
-          room: params.get("room"),
-          ipx: [{
-              name: "myipx",
-              host: "wss://myipx.com",
-            }, {
-              name: "dos.zone",
-              host: "wss://netherlands.dos.zone",
-            }
-          ],
-    });
+Dos(el, {
+    url: "game.jsdos",
+    startIpxServer: params.get("server") === "1",
+    connectIpxAddress: params.get("connect") ?? undefined,
+    net: {
+        peerServer: "https://net.example.com",
+        token: "js-dos",
+        secret: "fallback",
+        iceServers: async () => [],
+    },
+});
 ```
 
-The first element in the ipx array will be used as the default ipx server.
+Use `startIpxServer` on the host player, then pass the host peer ID or registered alias to another player through
+`connectIpxAddress`.
