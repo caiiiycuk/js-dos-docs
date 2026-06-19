@@ -82,3 +82,4 @@ timing, switch to manual **Cycles** and tune gradually.
 
 For Windows 9x games, avoid changing too many controls at once. Use **Fast Forward** for boot, then return to normal
 speed before launching the game. If rendering is heavy, try **Frame Skip** before lowering cycles.
+
