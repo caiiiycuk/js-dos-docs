@@ -101,6 +101,8 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **save**                   | trigger saving FS changes, returns `Promise<boolean>`                | -                                     |
 | **stop**                   | kill the emulation (use to stop player)                              | -                                     |
 
+`setNoCloud(true)` hides cloud-related UI. It does not disable local saves; use `fsChanges.local: false` for that.
+
 ## Events
 
 You can listen to js-dos events by providing a listener in the Dos function:

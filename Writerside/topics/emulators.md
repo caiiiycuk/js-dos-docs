@@ -65,6 +65,20 @@ interface BackendOptions {
 }
 ```
 
+Example:
+
+```Typescript
+const ci = await emulators.dosboxWorker(bundle, {
+    onExtractProgress: (bundleIndex, file, extracted, total) => {
+        console.log(bundleIndex, file, extracted, total);
+    },
+    sockdrivePreload: "default",
+});
+```
+
+`canvas` is used for `OffscreenCanvas` rendering. `audioWorklet` enables the audio worklet path when the browser supports
+it. `net` lets you pass a low-level networking instance shared with another backend.
+
 ## Bundle utilities
 
 `emulators` can also create and edit bundles:
@@ -73,4 +87,78 @@ interface BackendOptions {
 const bundle = await emulators.bundle();
 const config = await emulators.bundleConfig(bundleBytes);
 const updated = await emulators.bundleUpdateConfig(bundleBytes, config);
+```
+
+## Creating bundles
+
+`emulators.bundle()` creates a `DosBundle` builder. The builder contains default DOSBox config and default `jsdos.json`
+metadata. You can add files from zip archives and generate a `.jsdos` bundle as `Uint8Array`.
+
+```Typescript
+const bundle = await emulators.bundle();
+
+const bytes = await bundle
+    .extract("game.zip", "/")
+    .autoexec("GAME.EXE")
+    .toUint8Array();
+```
+
+`extract()` downloads and extracts a single zip archive. The second argument is the target path inside the DOS file
+system.
+
+For multiple archives, use `extractAll()`:
+
+```Typescript
+const bytes = await (await emulators.bundle())
+    .extractAll([
+        { url: "base.zip", path: "/", type: "zip" },
+        { url: "patch.zip", path: "/PATCH", type: "zip" },
+    ])
+    .autoexec("PATCH\\SETUP.EXE")
+    .toUint8Array();
+```
+
+You can edit config fields before generating the bundle:
+
+```Typescript
+const bundle = await emulators.bundle();
+
+bundle.dosboxConf = bundle.dosboxConf.replace("memsize=16", "memsize=32");
+bundle.jsdosConf = {
+    ...bundle.jsdosConf,
+    version: "8",
+};
+
+const bytes = await bundle.toUint8Array();
+```
+
+By default, config files from extracted archives can override the builder config. Pass `true` to `toUint8Array()` when
+the builder config should be written after extraction:
+
+```Typescript
+const bytes = await bundle.toUint8Array(true);
+```
+
+## Reading and updating bundle config
+
+Use `bundleConfig()` to read `.jsdos/dosbox.conf` and `.jsdos/jsdos.json` from an existing bundle:
+
+```Typescript
+const config = await emulators.bundleConfig(bundleBytes);
+
+if (config !== null) {
+    console.log(config.dosboxConf);
+    console.log(config.jsdosConf);
+}
+```
+
+Use `bundleUpdateConfig()` to write updated config back into the bundle:
+
+```Typescript
+const config = await emulators.bundleConfig(bundleBytes);
+
+if (config !== null) {
+    config.dosboxConf += "\n[cpu]\ncycles=max\n";
+    const updatedBundle = await emulators.bundleUpdateConfig(bundleBytes, config);
+}
 ```

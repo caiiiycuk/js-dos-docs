@@ -96,4 +96,18 @@ Dos(el, {
 
 ## Retrieving current changes
 
-You can retrieve current local changes by calling `getLocalChanges(key)`
+You can retrieve current local changes by calling `getLocalChanges(key)`.
+
+```Javascript
+const props = Dos(el, {
+    url: "game.jsdos",
+});
+
+const changes = await props.getLocalChanges("game.jsdos.changes");
+
+if (changes !== null) {
+    // changes is Uint8Array with the same data used by fsChanges.push
+}
+```
+
+If you override the save key with `fsChanges.urlToKey`, pass that key to `getLocalChanges()`.

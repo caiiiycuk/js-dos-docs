@@ -67,3 +67,58 @@ Dos(el, {
 
 Use `startIpxServer` on the host player, then pass the host peer ID or registered alias to another player through
 `connectIpxAddress`.
+
+## Reusing a network instance
+
+By default, each player creates its own WebRTC networking instance when `startIpxServer` or `connectIpxAddress` is used.
+If you run several players on the same page, you can pass the same `NetInstance` through `sharedNet`.
+
+```Javascript
+Dos(hostElement, {
+    url: "game.jsdos",
+    startIpxServer: true,
+    onEvent: (event, ci) => {
+        if (event === "ci-ready") {
+            const sharedNet = ci.net();
+            if (sharedNet === null) {
+                return;
+            }
+
+            Dos(clientElement, {
+                url: "game.jsdos",
+                connectIpxAddress: String(sharedNet.peerId),
+                sharedNet,
+            });
+        }
+    },
+});
+```
+
+`sharedNet` must be an object returned by `ci.net()` or an object implementing the same interface:
+
+```Typescript
+type NetInstance = {
+    peerId: number;
+    connected: Set<number>;
+    wait: (ms: number) => void;
+    registerAlias: (alias: string) => Promise<void>;
+    unregisterAlias: (alias: string) => void;
+    queryAliases: (query: string) => Promise<{ peerId: number }[]>;
+    sendBinary: (data: Uint8Array, peerId: number) => number;
+    recvBinary: () => { data: Uint8Array, peerId: number } | null;
+    disconnect: (peerId: number) => void;
+    shutdown: () => void;
+}
+```
+
+You can register a readable alias for the current peer and then connect another player by that alias:
+
+```Javascript
+const net = ci.net();
+
+if (net !== null) {
+    await net.registerAlias("my-room");
+}
+```
+
+Then pass `"my-room"` as `connectIpxAddress`.
