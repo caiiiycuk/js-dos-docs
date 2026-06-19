@@ -58,7 +58,11 @@ To do this, we need to subscribe to `frame` event and update texture:
 ```Typescript
 const rgba = new Uint8ClampedArray(320 * 200 * 4);
 
-ci.events().onFrame((rgb) => {
+ci.events().onFrame((rgb, _rgba) => {
+    if (rgb === null) {
+        return;
+    }
+
     for (let next = 0; next < 320 * 200; ++next) {
         rgba[next * 4 + 0] = rgb[next * 3 + 0];
         rgba[next * 4 + 1] = rgb[next * 3 + 1];
@@ -68,7 +72,7 @@ ci.events().onFrame((rgb) => {
 
     ctx?.putImageData(new ImageData(rgba, 320, 200), 0, 0);
     // ...
-}
+});
 ```
 
 Where `rgb` is an actual DOS screen frame.

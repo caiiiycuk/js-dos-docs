@@ -52,6 +52,7 @@ It returns `DosProps`, which you can use to control the created player.
 | **connectIpxAddress**   | Connect to an IPX peer ID or registered alias.                                                                                                                                                                                       | string                                                                                                                                                                                                                                                |                          |
 | **fsChanges**           | Options to configure [save/load](Save-Load-Game-Progress.md).                                                                                                                                                                       | object                                                                                                                                                                                                                                                | `{ local: true }`        |
 | **net**                 | WebRTC networking configuration.                                                                                                                                                                                                     | `{ peerServer: string, token: string, secret: string, iceServers: () => Promise<IceServer[]> }`                                                                                                                                                       | js-dos defaults          |
+| **sharedNet**           | Reuse an existing WebRTC networking instance between players.                                                                                                                                                                        | `NetInstance`                                                                                                                                                                                                                                         |                          |
 
 
 > All options are optional
@@ -78,14 +79,14 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setWorkerThread**        | select execution mode                                                | bool                                  |
 | **setOffscreenCanvas**     | enable or disable `OffscreenCanvas` rendering                         | bool                                  |
 | **setMouseCapture**        | enable or disable mouse capture                                      | bool                                  |
-| **setBackground**          | change background image                                              | URL                                   |
+| **setBackground**          | change background image                                              | URL or null                           |
 | **setFullScreen**          | change fullscreen mode                                               | bool                                  |
 | **setAutoStart**           | change auto start                                                    | bool                                  |
 | **setCountDownStart**      | set countdown to auto start in seconds                               | number                                |
 | **setAutoSave**            | change auto save mode                                                | bool                                  |
 | **setKiosk**               | change kiosk mode                                                    | bool                                  |
 | **setImageRendering**      | change image rendering                                               | pixelated, smooth                     |
-| **setRenderBackend**       | change render backend (available only before emulation start)        | webgl                                 |
+| **setRenderBackend**       | change render backend (available only before emulation start)        | webgl, canvas                         |
 | **setRenderAspect**        | change render aspect                                                 | AsIs, 1/1, 5/4, 4/3, 16/10, 16/9, Fit |
 | **setNoCloud**             | disable/enable cloud feature                                         | bool                                  |
 | **setScaleControls**       | set scale of controls                                                | number                                |
@@ -93,7 +94,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setPaused**              | pause/resume emulation                                               | bool                                  |
 | **setNoCursor**            | show/hide system cursor                                              | bool                                  |
 | **setVolume**              | set sound volume                                                     | number [0..1]                         |
-| **setSoftKeyboardLayout**  | set virtual keyboard layout                                          | string[]                              |
+| **setSoftKeyboardLayout**  | set virtual keyboard layout                                          | `string[] \| string[][][]`            |
 | **setSoftKeyboardSymbols** | set virtual keyboard symbols                                         | map[]                                 |
 | **setSoftFullscreen**      | set soft fullscreen                                                  | bool                                  |
 | **setThinSidebar**         | switch between normal and thin sidebar                               | bool                                  |

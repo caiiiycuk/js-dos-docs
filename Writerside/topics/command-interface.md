@@ -54,6 +54,7 @@ export interface CommandInterface {
     fsReadFile(file: string): Promise<Uint8Array>;
     fsWriteFile(file: string, contents: ReadableStream<Uint8Array> | Uint8Array): Promise<void>;
     fsDeleteFile(file: string): Promise<boolean>;
+    getRunningProgram(): Promise<string>;
 }
 ```
 

@@ -48,10 +48,10 @@ This method will write contents into the provided file.
 ## Delete file from FS
 
 ```Javascript
-fsDeleteFile(file: string): Promise<void>;
+fsDeleteFile(file: string): Promise<boolean>;
 ```
 
-Delete file from FS.
+Delete file from FS. The returned value is `true` when the file was deleted.
 > You must wait while the promise is resolved, js-dos is able to read/write/delete only one file once.
 >
 {style="warning"}

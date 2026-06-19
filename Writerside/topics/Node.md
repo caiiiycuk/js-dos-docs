@@ -60,24 +60,27 @@ to subscribe to frame updates and to send key/mouse events.
 ```
 
 > The **onFrame** method has two arguments: `rgb` and `rgba` image data. One of them is always **null**, while the other is
-> **UInt8ClampedArray**. The active format depends on the emulator.
+> **Uint8Array**. The active format depends on the emulator.
 > 
 {style="warning"}
 
-In v7, frames are in RGBA format with transparent alpha. Let's fix this and save a screenshot:
+To save a screenshot, convert the latest frame to RGBA:
 ```Javascript
-    const width = ci.width();
-    const height = ci.height();
-    
-    for (let next = 3; next < width * height * 4; next = next + 4) {
-        rgba[next] = 255;
+function toRgba(frame, width, height) {
+    const screenshot = Buffer.alloc(width * height * 4);
+
+    for (let source = 0, target = 0; target < screenshot.length;) {
+        screenshot[target++] = frame[source++];
+        screenshot[target++] = frame[source++];
+        screenshot[target++] = frame[source++];
+        screenshot[target++] = 255;
+        if (frame.length === screenshot.length) {
+            source++;
+        }
     }
 
-    new jimp({ data: rgba, width, height }, (err, image) => {
-        image.write("./screenshot.png", () => {
-            ci.exit();
-        });
-    });
+    return screenshot;
+}
 ```
 
 <br/>
@@ -96,12 +99,28 @@ emulators.pathPrefix = "./";
 
 const bundle = fs.readFileSync("digger.jsdos");
 
+function toRgba(frame, width, height) {
+    const screenshot = Buffer.alloc(width * height * 4);
+
+    for (let source = 0, target = 0; target < screenshot.length;) {
+        screenshot[target++] = frame[source++];
+        screenshot[target++] = frame[source++];
+        screenshot[target++] = frame[source++];
+        screenshot[target++] = 255;
+        if (frame.length === screenshot.length) {
+            source++;
+        }
+    }
+
+    return screenshot;
+}
+
 emulators
     .dosboxDirect(bundle)
     .then((ci) => {
-        let rgba = new Uint8Array(0);
-        ci.events().onFrame((_, _rgba) => {
-            rgba = _rgba;
+        let frame = new Uint8Array(0);
+        ci.events().onFrame((rgb, rgba) => {
+            frame = rgb ?? rgba ?? frame;
         });
 
         // capture the screen after 3 sec
@@ -109,12 +128,12 @@ emulators
         setTimeout(() => {
             const width = ci.width();
             const height = ci.height();
+            if (frame.length === 0) {
+                throw new Error("No frame received");
+            }
 
-            for (let next = 3; next < width * height * 4; next = next + 4) {
-                rgba[next] = 255;
-            }           
-
-            new jimp({ data: rgba, width, height }, (err, image) => {
+            const screenshot = toRgba(frame, width, height);
+            new jimp({ data: screenshot, width, height }, (err, image) => {
                 image.write("./screenshot.png", () => {
                     ci.exit();
                 });
