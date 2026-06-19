@@ -32,6 +32,7 @@
         </toc-element>
         <toc-element topic="3Dfx.md"/>
         <toc-element topic="networking.md"/>
+        <toc-element topic="turbo.md"/>
         <toc-element topic="v7.md">
             <toc-element topic="mobile-support-v7.md"/>
             <toc-element topic="mouse-locking.md"/>

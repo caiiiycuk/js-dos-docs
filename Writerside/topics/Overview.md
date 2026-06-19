@@ -29,6 +29,6 @@ The key features:
 * Save/load support with local persistence and custom storage integrations
 * WebAssembly and pure JS versions
 * AudioWorklet mode and experimental JSPI backend support
-* Turbo controls with CPU metrics, speed, cycles, fast forward, and frame skip controls
+* [Turbo controls](Turbo.md) with CPU metrics, speed, cycles, fast forward, and frame skip controls
 
 > If you want to build custom DOS player, then please use [emulators](threejs.md) packages instead.
