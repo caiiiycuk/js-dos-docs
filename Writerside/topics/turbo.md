@@ -3,10 +3,6 @@
 The Turbo panel lets users tune emulator speed while a bundle is running. Use it to speed up slow startup sequences,
 reduce load in heavy scenes, or lock a game to a more stable CPU configuration.
 
-> Image placeholder: Turbo button in the js-dos sidebar.
->
-{style="note"}
-
 Open the panel with the Turbo button in the sidebar. The button is highlighted while the panel is open. It is also marked
 as active when any non-default turbo option is enabled: manual CPU mode, speed different from `100%`, fast forward, or
 frame skip.
