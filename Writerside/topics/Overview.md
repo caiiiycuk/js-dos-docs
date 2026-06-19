@@ -10,9 +10,9 @@ browser quickly. js-dos provides many advanced features like multiplayer, save/l
 All available features are enabled for any integration and free.
 
 The unique capabilities:
-* The only browser solution with accelerated **3Dfx** rendering through a WebGL-backed renderer
-* Full **IPX** networking stack in browser, powered by WebRTC-NET, with IPX server creation, direct peer/alias
-  connections, and shared network instances
+* The only browser solution with accelerated [**3Dfx**](3Dfx.md) rendering through a WebGL-backed renderer
+* Full [**IPX** networking](networking.md) stack in browser, powered by WebRTC-NET, with IPX server creation, direct
+  peer/alias connections, and shared network instances
 * **Windows 9x** support through DOSBox-X, including prebuilt Windows 95/98 system images and support for Windows games
   with DirectX and 3Dfx drivers
 * **Sockdrive V2** for large disk images: backendless streaming drives, preload modes, and improved persistence handling
