@@ -5,68 +5,157 @@ Using a browser, it's not possible to directly connect two clients. However, usi
 you can emulate direct connection.
 
 > Only IPX protocol is supported right now.
-
-Here is a tutorial video on how to use networking with js-dos:
-
-<video src="https://www.youtube.com/watch?v=YH22lZ1EUjM"/>
-
-By default, users are able to enjoy these games using the js-dos networking service.
-
-> You need to enable networking features in player using [options](Player-API.md#options)
+>
 
 ## Deploy your own networking backend
 
-As mentioned, js-dos provides a public networking service, but for lower latency or custom deployments you can use your
-own peer server.
+### How networking works
 
-> If your deployment is permanent and well maintained, then please let us know, we will add it to
-> js-dos player defaults
-> 
-{style="note"}
+js-dos networking uses [WebRTC-NET](https://github.com/caiiiycuk/WebRTC-NET). The browser player loads
+`webrtcnet.mjs` and `webrtcnet.wasm`, opens a WebSocket connection to a signaling server, and then creates WebRTC
+connections between players.
 
-### The Server
+The signaling server does not carry game traffic. It only:
 
-The server code is licensed under GPL-2 and you can find it [here](https://github.com/caiiiycuk/dosbox-ipx-server).
-This server works as a relay, connecting multiple js-dos clients together. You need to deploy it on a publicly available
-server.
+1. assigns each player a `peerId`;
+2. stores aliases registered by players;
+3. forwards WebRTC signaling messages such as SDP offers, SDP answers, and ICE candidates.
 
-1. Download the server [binary](https://github.com/caiiiycuk/dosbox-ipx-server/releases/)
-2. `chmod +x server` to make it executable
-3. Run it as follows:
+After signaling is complete, DOS/IPX packets go through the WebRTC data channel between players. If direct peer-to-peer
+connection is impossible because of NAT/firewall rules, WebRTC needs STUN/TURN servers from the ICE server list. TURN is
+the relay for game traffic; the signaling server is not a TURN relay.
 
-   ```
-   ./server -c cert.pem -k privkey.pem
-   ```
-   
-   | Argument        | Description              |
-   |-----------------|--------------------------|
-   | ./server        | server binary            |
-   | -c cert.pem     | path to SSL certificate  |
-   | -k privkey.pem  | path to private key file |
+### Signaling server
+
+Use the WebRTC-NET `peer-server` from [WebRTC-NET](https://github.com/caiiiycuk/WebRTC-NET/releases).
+
+A production deployment usually has these public endpoints:
+
+| endpoint               | role                                                                                 |
+|------------------------|--------------------------------------------------------------------------------------|
+| `wss://net.example.com/ws` | WebRTC-NET `peer-server`; exchanges `peerId`, aliases, SDP offers/answers, and ICE candidates. |
+| `turn.example.com`     | STUN/TURN server; helps WebRTC discover routes and relays game traffic when needed.  |
+
+The two roles may run on the same machine or on separate machines. They are configured separately in js-dos:
+`net.peerServer` points to the signaling endpoint, while `net.iceServers` returns STUN/TURN entries.
+
+Download the Linux `peer-server` binary from the
+[WebRTC-NET Releases](https://github.com/caiiiycuk/WebRTC-NET/releases) section. Use the Linux x86_64 binary, then copy
+it to your server and make it executable:
+
+```bash
+sudo mkdir -p /opt/webrtc-net
+sudo install -m 755 peer-server.bin.x86_64 /opt/webrtc-net/peer-server.bin.x86_64
+```
+
+Run it with TLS so browsers can connect from HTTPS pages:
+
+```bash
+/opt/webrtc-net/peer-server.bin.x86_64 \
+    --port 443 \
+    --tls \
+    --tls-cert /etc/letsencrypt/live/net.example.com/fullchain.pem \
+    --tls-key /etc/letsencrypt/live/net.example.com/privkey.pem \
+    -v info
+```
+
+Useful flags:
+
+| argument          | description                                      |
+|-------------------|--------------------------------------------------|
+| `--port <port>`   | Signaling server port. Default is `8080`.        |
+| `--tls`           | Serve HTTPS/WSS instead of plain HTTP/WebSocket. |
+| `--tls-cert`      | TLS certificate chain file.                      |
+| `--tls-key`       | TLS private key file.                            |
+| `-v <level>`      | Log level: `error`, `warn`, `notice`, `info`, `debug`. |
+
+With `--tls`, `peer-server` serves WSS on the same `--port`. Without `--tls`, it serves plain WS and should only be used
+behind a reverse proxy that terminates TLS and forwards WebSocket traffic to it.
+
+For a supervised deployment, run the same command under systemd or supervisor:
+
+```ini
+[program:webrtc-net]
+command=/opt/webrtc-net/peer-server.bin.x86_64 --port 443 --tls --tls-cert /etc/letsencrypt/live/net.example.com/fullchain.pem --tls-key /etc/letsencrypt/live/net.example.com/privkey.pem -v info
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/webrtc-net.err.log
+stdout_logfile=/var/log/webrtc-net.out.log
+```
+
+Open the signaling TCP port in your firewall. If you run the server on `443`, open `443/tcp`; if you run it on `8080`,
+open `8080/tcp`.
+
+### ICE servers
+
+The signaling server does not provide STUN/TURN settings. js-dos passes ICE servers to WebRTC-NET from the player
+configuration.
+
+For LAN or simple public-network tests, a public STUN server may be enough:
+
+```Javascript
+iceServers: async () => [
+    { urls: ["stun:stun.l.google.com:19302"] },
+]
+```
+
+For production internet play, deploy a TURN server such as coturn and return both STUN and TURN entries:
+
+```Javascript
+iceServers: async () => [
+    { urls: ["stun:turn.example.com:3478"] },
+    {
+        urls: [
+            "turn:turn.example.com:3478?transport=udp",
+            "turn:turn.example.com:3478?transport=tcp",
+            "turns:turn.example.com:5349?transport=tcp",
+        ],
+        username: "user",
+        credential: "password",
+    },
+]
+```
+
+If you use the coturn helper from WebRTC-NET, see `coturn-docker/` in the WebRTC-NET repository. It provides Docker
+Compose setup for coturn, nginx, certbot, TLS certificates, and a browser latency test page.
+
+For coturn, expose at least `3478/tcp`, `3478/udp`, `5349/tcp`, and the relay UDP range configured in coturn. The
+WebRTC-NET helper uses `49152-65535/udp` for relay traffic.
 
 ### Configuring js-dos player
 
-When the server is started, you can use it with js-dos player.
-For example, if your peer server is available at `https://net.example.com`, [js-dos configuration](Player-API.md) will be:
+When the signaling server and ICE servers are ready, configure js-dos player:
 
-```javascript
+```Javascript
 const params = new URLSearchParams(location.search);
-// ...
+
 Dos(el, {
     url: "game.jsdos",
     startIpxServer: params.get("server") === "1",
     connectIpxAddress: params.get("connect") ?? undefined,
     net: {
-        peerServer: "https://net.example.com",
-        token: "js-dos",
+        peerServer: "wss://net.example.com/ws",
+        token: "my-game",
         secret: "fallback",
-        iceServers: async () => [],
+        iceServers: async () => [
+            { urls: ["stun:turn.example.com:3478"] },
+            {
+                urls: ["turn:turn.example.com:3478?transport=udp"],
+                username: "user",
+                credential: "password",
+            },
+        ],
     },
 });
 ```
 
-Use `startIpxServer` on the host player, then pass the host peer ID or registered alias to another player through
-`connectIpxAddress`.
+`peerServer` is the WebSocket URL of your WebRTC-NET `peer-server`. Use `wss://` for HTTPS pages. `token` and `secret`
+are passed to WebRTC-NET as the game token and game secret; current `peer-server` does not enforce user authentication,
+but use stable values per deployment.
+
+Use `startIpxServer` on the host player, then pass the host `peerId` or registered alias to another player through
+`connectIpxAddress`. The actual game data will flow through WebRTC, using TURN only when direct peer-to-peer connection
+cannot be established.
 
 ## Reusing a network instance
 
