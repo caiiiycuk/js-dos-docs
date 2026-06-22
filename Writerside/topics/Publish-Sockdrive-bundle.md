@@ -43,7 +43,7 @@ sudo chmod +r /boot/vmlinuz-*
 2. Convert using following command:
 
 ```
-./cli <jsdos_bundle> <drive_prefix> <output_dir> <url> <sockified_bundle> [-bg]
+./cli sockify <jsdos_bundle> <drive_prefix> <output_dir> <url> <sockified_bundle> [-bg]
 ```
 
 - **jsdos_bundle** - path to the jsdos bundle file (or directory with bundle files)
@@ -57,7 +57,7 @@ sudo chmod +r /boot/vmlinuz-*
 **Example:**
 
 ```
-./cli sockify bundle.jsdos bundle- ./sockdrive https://my.site bundle-sockified.jsdos [-b] [-g]
+./cli sockify bundle.jsdos bundle- ./sockdrive https://my.site/sockdrive bundle-sockified.jsdos [-b] [-g]
 ```
 
 in our example you need to publish context of ./sockdrive folder to your web-server,
