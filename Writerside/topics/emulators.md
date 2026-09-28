@@ -32,16 +32,18 @@ const ci = await emulators.dosboxWorker(bundle);
 
 Available backend factories:
 
-| function             | description                                      |
-|----------------------|--------------------------------------------------|
-| **dosboxDirect**     | Starts DOSBox in the current thread.             |
-| **dosboxWorker**     | Starts DOSBox in a Worker.                       |
-| **dosboxNode**       | Starts DOSBox in Node.js.                        |
-| **dosboxXDirect**    | Starts DOSBox-X in the current thread.           |
-| **dosboxXWorker**    | Starts DOSBox-X in a Worker.                     |
-| **dosboxXJspiWorker**| Starts DOSBox-X JSPI build in a Worker.          |
-| **dosboxXNode**      | Starts DOSBox-X in Node.js.                      |
-| **backend**          | Starts a backend from a custom transport layer.  |
+| function                | description                                             |
+|-------------------------|---------------------------------------------------------|
+| **dosboxDirect**        | Starts DOSBox in the current thread.                    |
+| **dosboxWorker**        | Starts DOSBox in a Worker.                              |
+| **dosboxNode**          | Starts DOSBox in Node.js.                               |
+| **dosboxXDirect**       | Starts DOSBox-X in the current thread.                  |
+| **dosboxXJspiDirect**   | Starts DOSBox-X JSPI build in the current thread.       |
+| **dosboxXWorker**       | Starts DOSBox-X in a Worker.                            |
+| **dosboxXJspiWorker**   | Starts DOSBox-X JSPI build in a Worker.                 |
+| **dosboxXDebugWorker**  | Starts DOSBox-X debug Worker with MCP/debugger support. |
+| **dosboxXNode**         | Starts DOSBox-X in Node.js.                             |
+| **backend**             | Starts a backend from a custom transport layer.         |
 
 ## InitFs
 
@@ -61,6 +63,8 @@ interface BackendOptions {
     canvas?: OffscreenCanvas;
     audioWorklet?: boolean;
     sockdrivePreload?: "all" | "default" | "none";
+    sockdriveOpfsRoot?: string;
+    mcpServerPort?: number;
     net?: Net;
 }
 ```
@@ -77,7 +81,9 @@ const ci = await emulators.dosboxWorker(bundle, {
 ```
 
 `canvas` is used for `OffscreenCanvas` rendering. `audioWorklet` enables the audio worklet path when the browser supports
-it. `net` lets you pass a low-level networking instance shared with another backend.
+it. `sockdriveOpfsRoot` changes the OPFS directory used by sockdrive cache data. `mcpServerPort` enables the DOSBox-X
+debug MCP server for `dosboxXDebugWorker`. `net` lets you pass a low-level networking instance shared with another
+backend.
 
 ## Bundle utilities
 

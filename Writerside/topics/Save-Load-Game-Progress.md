@@ -11,7 +11,7 @@ support storing progress.
 
 ![save-button.jpg](save-button.jpg)
 
-> By default, js-dos stores game progress in the browser's IndexedDB. This data can be wiped by the browser at any time.
+> By default, js-dos stores game progress in the browser's OPFS storage. This data can be wiped by the browser at any time.
 > You can avoid this problem by implementing your own storage.
 >
 {style="warning"}
@@ -43,6 +43,33 @@ After saving the game using the game's built-in mechanism, you should explicitly
 ![save-button.jpg](save-button.jpg)
 
 When your saves are successfully stored in persistent storage, you will receive a green toast notification. Now, you can reload the page, and your saves will be retained!
+
+## Change local storage root
+
+By default, js-dos stores local data under the `jsdos` OPFS directory. Use `opfsRoot` when several players on the same
+origin need separate local storage:
+
+```Javascript
+Dos(el, {
+    url: "game.jsdos",
+    opfsRoot: "my-game",
+});
+```
+
+This changes where js-dos keeps local saves, cached bundles, and sockdrive cache data.
+
+## Disable quick state saves
+
+DOSBox-X supports emulator state quick save/load through the sidebar buttons and F6/F7 shortcuts. If your integration
+should only use in-game saves, disable quick state saves:
+
+```Javascript
+Dos(el, {
+    url: "game.jsdos",
+    backend: "dosboxX",
+    quickSave: false,
+});
+```
 
 ## Disable saves
 
