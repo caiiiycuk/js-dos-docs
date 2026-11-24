@@ -38,7 +38,9 @@ Your game progress has been successfully saved! To load it, simply follow the sa
 
 ## Keep saves between page reload
 
-After saving the game using the game's built-in mechanism, you should explicitly inform the JS-DOS player that the game saves have been updated and that you want to store them persistently (in the cloud, IndexedDB, etc.). To do this, you must click the "diskette" button in the JS-DOS sidebar. If you do not do this, your progress will be immediately lost upon restarting the page.
+After saving inside the game, click the diskette button in the js-dos sidebar to persist filesystem changes.
+By default, js-dos uses local OPFS storage; integrations can provide custom storage through `fsChanges`.
+Unsaved filesystem changes are lost when the page reloads.
 
 ![save-button.jpg](save-button.jpg)
 
@@ -57,6 +59,16 @@ Dos(el, {
 ```
 
 This changes where js-dos keeps local saves, cached bundles, and sockdrive cache data.
+
+## Export a complete bundle
+
+`props.save()` and the diskette button save filesystem changes, not a complete game archive.
+Starting with js-dos 8.5.4, use [`props.editor.snapshot()`](player-editor.md) to capture a complete `.jsdos` ZIP
+with current files and draft configuration. Your application must store or download the returned bytes.
+[js-dos MCP](js-dos-mcp.md) can export that snapshot to an explicitly selected local file.
+
+A bundle snapshot is not an emulator CPU/RAM save state. External sockdrive and qcow2 disk resources are not
+embedded; check snapshot warnings before treating the bundle as standalone.
 
 ## Disable quick state saves
 

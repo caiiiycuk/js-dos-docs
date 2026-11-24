@@ -9,6 +9,10 @@ It provides full-featured **DOS player** that can be easily installed and used t
 browser quickly. js-dos provides many advanced features like multiplayer, save/load, and large disk streaming.
 All available features are enabled for any integration and free.
 
+Use [js-dos MCP](js-dos-mcp.md) to let an AI assistant create, edit and run bundles in a local Studio,
+then export a bundle or generate a standalone HTML, Vite, React, Vue or Angular project.
+For programmatic browser integration, use the [Player API](Player-API.md) and [editor API](player-editor.md).
+
 The unique capabilities:
 * The only browser solution with accelerated [**3Dfx**](3Dfx.md) rendering through a WebGL-backed renderer
 * Full [**IPX** networking](networking.md) stack in browser, powered by WebRTC-NET, with IPX server creation, direct
@@ -29,7 +33,7 @@ The key features:
 * Save/load support with local persistence and custom storage integrations
 * WebAssembly and pure JS versions
 * AudioWorklet mode and experimental JSPI backend support
-* DOSBox-X debug Worker with browser MCP/debugger support
+* [DOSBox-X MCP debugger](dosbox-x-mcp.md) with a browser debug Worker, CPU inspection and breakpoints
 * [Turbo controls](turbo.md) with CPU metrics, speed, cycles, fast forward, and frame skip controls
 
 > If you want to build custom DOS player, then please use [emulators](threejs.md) packages instead.

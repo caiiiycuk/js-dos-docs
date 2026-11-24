@@ -20,6 +20,9 @@ DIGGER.COM         - game file
 
 You can generate a `js-dos bundle` programmatically. But we recommend you use our [Game Studio](https://v8.js-dos.com/studio)
 
+You can also use [js-dos MCP](js-dos-mcp.md) to create and edit bundles with an AI assistant in a local Studio.
+For editing inside your own browser integration, use [`DosProps.editor`](player-editor.md).
+
 ## Cookbook 
 
 We provide separate tutorials for DOS and Windows games. However, the choice between tutorials should be based not only on the operating system - if you're working with large DOS games, we recommend following the sockdrive tutorial to ensure the best gaming experience.

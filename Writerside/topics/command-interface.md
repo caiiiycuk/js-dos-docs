@@ -219,6 +219,8 @@ ci.events().onMessage((type, ...args) => {
 });
 ```
 
+Starting with emulators 8.5.3, Worker errors also reach `onMessage()` subscribers as error messages.
+
 `onUnload()` lets you delay backend unload until your cleanup promise is resolved:
 
 ```Javascript

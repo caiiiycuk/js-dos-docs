@@ -5,7 +5,7 @@ The js-dos player provides a single entry point: the `Dos` function. It takes tw
 2. an options object to configure the player
 
 ```Typescript
-Dos(element: HTMLDivElement, options: DosOptions) => DosProps;
+Dos(element: HTMLDivElement, options: Partial<DosOptions>) => DosProps;
 ```
 
 It returns `DosProps`, which you can use to control the created player.
@@ -33,6 +33,7 @@ It returns `DosProps`, which you can use to control the created player.
 | **fullScreen**          | Automatically enter fullscreen mode.                                                                                                                                                                                                 | boolean                                                                                                                                                                                                                                               | false                    |
 | **onEvent**             | Listener for js-dos events.                                                                                                                                                                                                          | function                                                                                                                                                                                                                                              |                          |
 | **autoStart**           | Automatically start emulation.                                                                                                                                                                                                       | boolean                                                                                                                                                                                                                                               | false                    |
+| **runInBackground**     | Continue emulation when the page is hidden. Explicit pause still takes precedence; browser throttling and audio policies still apply.                                                                                               | boolean                                                                                                                                                                                                                                               | false                    |
 | **fastForwardOnBoot**   | Fast-forward boot for the specified number of seconds when a sockdrive bundle is used.                                                                                                                                               | number                                                                                                                                                                                                                                                | 0                        |
 | **countDownStart**      | Set countdown before auto start, in seconds.                                                                                                                                                                                         | number                                                                                                                                                                                                                                                | 0                        |
 | **autoSave**            | Automatically save progress on certain actions, such as exiting fullscreen.                                                                                                                                                          | boolean                                                                                                                                                                                                                                               | false                    |
@@ -72,6 +73,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 
 | property                   | description                                                          | arguments                             |
 |----------------------------|----------------------------------------------------------------------|---------------------------------------|
+| **editor**                 | [Bundle editor API](player-editor.md) for configuration, files, start/restart and complete snapshots | |
 | **getVersion**             | version of js-dos + emulators                                        |                                       |
 | **getLocalChanges**        | return current FS changes [read more](Save-Load-Game-Progress.md)    | key                                   |
 | **setTheme**               | switch player theme                                                  | theme name                            |
@@ -101,7 +103,7 @@ props.setFullScreen(true); // switch to fullscreen mode
 | **setSoftFullscreen**      | set soft fullscreen                                                  | bool                                  |
 | **setThinSidebar**         | switch between normal and thin sidebar                               | bool                                  |
 | **save**                   | trigger saving FS changes, returns `Promise<boolean>`                | -                                     |
-| **stop**                   | kill the emulation (use to stop player)                              | -                                     |
+| **stop**                   | dispose the player and pending or active emulation; returns `Promise<void>` | -                                |
 
 `setNoCloud(true)` hides cloud-related UI. It does not disable local saves; use `fsChanges.local: false` for that.
 
@@ -125,10 +127,27 @@ Dos(elem, {
 |       | **fullscreen-change**  | when fullscreen state of player changed                                           | boolean                                  |
 
 
+## Background execution
+
+The player pauses when the page is hidden by default. Set `runInBackground: true` at creation to opt out:
+
+```Javascript
+const props = Dos(elem, {
+    url: "game.jsdos",
+    runInBackground: true,
+});
+```
+
+`props.setPaused(true)` still pauses explicitly. Background execution does not bypass browser timer throttling
+or the user gesture required to start audio.
+
 ## Stop/Restart player
 
-* To **stop** player and free all used resources, please call `props.stop()`, after this player is totally disposed.
-* To **restart** player dispose current player and start new one.
+Call `await props.stop()` to dispose the player. It unmounts the UI, removes its root/document listeners and stops
+pending or active emulation. Await completion before reusing the element to create another player.
+
+To restart the open bundle without disposing the player, use [`props.editor.restart()`](player-editor.md).
+It preserves current filesystem contents and applies the draft configuration. It does not restore CPU/RAM state.
 
 ## Typescript
 

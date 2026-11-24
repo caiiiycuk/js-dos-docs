@@ -9,6 +9,7 @@
     <toc-element topic="Overview.md">
         <toc-element topic="dos-api.md">
         </toc-element>
+        <toc-element topic="js-dos-mcp.md"/>
         <toc-element topic="jsdos-bundle.md">
             <toc-element topic="DOS-Games.md">
             </toc-element>
@@ -18,7 +19,9 @@
             <toc-element topic="install-os.md"/>
         </toc-element>
         <toc-element topic="Save-Load-Game-Progress.md"/>
-        <toc-element topic="Player-API.md"/>
+        <toc-element topic="Player-API.md">
+            <toc-element topic="player-editor.md"/>
+        </toc-element>
         <toc-element topic="mobile-support.md">
             <toc-element topic="Virtual-Keyboard.md"/>
         </toc-element>
@@ -50,7 +53,9 @@
         <toc-element topic="command-interface.md"/>
         <toc-element topic="dosbox-direct.md"/>
         <toc-element topic="dosbox-worker.md"/>
-        <toc-element topic="DOSBox-X.md"/>
+        <toc-element topic="DOSBox-X.md">
+            <toc-element topic="dosbox-x-mcp.md"/>
+        </toc-element>
         <toc-element topic="estimating-performance.md"/>
         <toc-element topic="contributing-emulators.md"/>
     </toc-element>

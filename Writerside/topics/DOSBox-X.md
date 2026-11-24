@@ -28,17 +28,20 @@ const ci = await emulators.dosboxXJspiDirect(bundle);
 
 ## Browser debugger and MCP
 
-DOSBox-X has a debug Worker build for browser debugger integrations. Start it with `dosboxXDebugWorker` and pass the MCP
-server port:
+DOSBox-X has a debug Worker build that connects to a separate local MCP debugger server.
+First, call that server's `dosbox_mcp_websocket_port` tool. Use the returned value as `websocketPort`:
 
 ```Javascript
 const ci = await emulators.dosboxXDebugWorker(bundle, {
-    mcpServerPort: 58992,
+    mcpServerPort: websocketPort,
 });
 ```
 
 In the js-dos player, set the backend to DOSBox-X, keep Worker mode enabled, leave JSPI disabled, and enter a non-zero
 Debug Port in the pre-run settings. The player then uses the debug Worker build automatically.
+
+See [DOSBox-X MCP debugger](dosbox-x-mcp.md) for server installation, port discovery, breakpoints and debugger commands.
+For bundle editing and project generation instead, use [js-dos MCP](js-dos-mcp.md).
 
 > The debug build is only for debugging. Use `dosboxXWorker` for normal gameplay.
 >

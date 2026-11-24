@@ -1,5 +1,8 @@
 # Getting Started
 
+To create a bundle or website through an AI assistant, start with [js-dos MCP](js-dos-mcp.md).
+The guide below explains how to embed the player manually.
+
 js-dos does not require any backend to start. You need to have some static website hosting where you put
 your webpage with DOS.
 

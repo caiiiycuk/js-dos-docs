@@ -81,9 +81,10 @@ const ci = await emulators.dosboxWorker(bundle, {
 ```
 
 `canvas` is used for `OffscreenCanvas` rendering. `audioWorklet` enables the audio worklet path when the browser supports
-it. `sockdriveOpfsRoot` changes the OPFS directory used by sockdrive cache data. `mcpServerPort` enables the DOSBox-X
-debug MCP server for `dosboxXDebugWorker`. `net` lets you pass a low-level networking instance shared with another
-backend.
+it. `sockdriveOpfsRoot` changes the OPFS directory used by sockdrive cache data. `mcpServerPort` tells
+`dosboxXDebugWorker` which local WebSocket port to connect to for [MCP debugging](dosbox-x-mcp.md).
+Query `dosbox_mcp_websocket_port` on the separate debugger MCP server for that port; `0` disables the connection.
+`net` lets you pass a low-level networking instance shared with another backend.
 
 ## Bundle utilities
 
